@@ -19,6 +19,15 @@
         #nav1{
             background-color: #EBEBBA;
         }
+        #linha-vertical{
+            width:20px;
+            height: 30px;
+            background-color: red;
+        }
+        #divLog2{
+            height: 50px;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -30,12 +39,13 @@
         </div>
     </nav>
     <!--formulario de login-->
-    <div id="loginForm" class="container mt-5 bg-light">
+    <div id="divLog2" class="col border border-primary"></div>
+    <div id="loginForm" class="container mt-5 ">
         <div class="row align-items-center">
-            <div class="col-md-10 mx-auto col-lg-5">
-                <h3>Login</h3>
-                <form action="p-4 p-md-5 border rounded-3 bg-light">
-                    <div class="form-floating mb-3 mt-3">
+            <div class="col-md-10 mx-auto col-lg-4 bg-light border rounded-3">
+                <h3 class="text-center mt-2">Login</h3>
+                <form action="p-4 p-md-5 border rounded-3 ">
+                    <div class="form-floating mb-3 mt-4">
                         <input type="Email" class="form-control" id="inputEmail" placeholder="Email">
                         <label for="inputEmail">Email</label>
                     </div>
@@ -51,6 +61,8 @@
                     </div>
                 </form>
             </div>
+           
+            
         </div>
     </div>
        

@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/login', function(){
     return view('site/login');
 });
+Route::get('/criar_conta',function(){
+    return view('admin/CriarConta');
+});
