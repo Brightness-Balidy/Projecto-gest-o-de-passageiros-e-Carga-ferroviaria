@@ -16,6 +16,9 @@
             margin-left:35%;
             width:30%;
         }*/
+        body{
+            background-color: green;
+        }
         #nav1{
             background-color: #EBEBBA;
         }
@@ -32,17 +35,17 @@
 </head>
 <body>
         <!--barra de navegacao-->
-    <nav id="nav1" class="navbar ">
-        <div id="main" class="container ">
+    <nav id="nav1" class="navbar">
+        <div id="main" class="container bg-warning ">
             <a href="" class="navbar-brand"> CFM</a>
             <span class="navbar-text">portuguese</span>
         </div>
     </nav>
     <!--formulario de login-->
-    <div id="divLog2" class="col border border-primary"></div>
+    <div id="divLog2" class="col "></div>
     <div id="loginForm" class="container mt-5 ">
         <div class="row align-items-center">
-            <div class="col-md-10 mx-auto col-lg-4 bg-light border rounded-3">
+            <div class="col-md-10 mx-auto col-lg-4 bg-light border rounded-3 border-info">
                 <h3 class="text-center mt-2">Login</h3>
                 <form action="p-4 p-md-5 border rounded-3 ">
                     <div class="form-floating mb-3 mt-4">
