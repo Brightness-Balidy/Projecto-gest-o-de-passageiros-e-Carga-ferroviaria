@@ -54,7 +54,7 @@
         .menu a:hover{
             background-color:#8e8e89;
             transition:0.5s;
-            letter-spacing: 4px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
         /*body things*/
@@ -84,7 +84,7 @@
     <div class="main">
         <div class="menu">
             <h2 id="logo">LOGO</h2>
-            <a href="#">Home</a>    
+            <a href="#">Relatórios</a>    
             <a href="#">Home</a>
             <a href="#">Home</a>
             <a href="#">Home</a>
@@ -93,6 +93,16 @@
         </div>
         <div class="bg-dark mt-4 ml-4 mr-4 mb-4" id="bodyDiv">
             <div id="centerbody" class="bg-info mt-4 mr-4 ml-4">dfas</div>
+            <table class="table table-stripped">
+                <tr>
+                    
+                </tr>
+                <tr>
+
+                </tr>
+                   
+                
+            </table>
         </div>
         
 

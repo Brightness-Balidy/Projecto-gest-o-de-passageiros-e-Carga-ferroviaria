@@ -34,7 +34,7 @@
     </style>
 </head>
 <body>
-        <!--barra de navegacao-->
+    <!--barra de navegacao-->
     <nav id="nav1" class="navbar">
         <div id="main" class="container bg-warning ">
             <a href="" class="navbar-brand"> CFM</a>
@@ -47,7 +47,7 @@
         <div class="row align-items-center">
             <div class="col-md-10 mx-auto col-lg-4 bg-light border rounded-3 border-info">
                 <h3 class="text-center mt-2">Login</h3>
-                <form action="p-4 p-md-5 border rounded-3 ">
+                <form action="p-4 p-md-5 border rounded-3">
                     <div class="form-floating mb-3 mt-4">
                         <input type="Email" class="form-control" id="inputEmail" placeholder="Email">
                         <label for="inputEmail">Email</label>
