@@ -114,13 +114,13 @@
             <a href="#"><ion-icon class="pr-3" name="ticket-outline"></ion-icon><span></span>Bilheteria</a>
             <a href="#"><span class="material-symbols-outlined pr-3">
                     package
-                </span>ENCOMENDAS</a>
+                </span>Encomendas</a>
             <a href="#"><span class="material-symbols-outlined pr-3">
                     luggage
-                </span>BAGAGENS</a>
+                </span>Bagagens</a>
             <a href="#"><span class="material-symbols-outlined pr-3">
                     summarize
-                </span>RELATÓRIOS</a>
+                </span>Relatórios</a>
            
         </div>
 
