@@ -36,7 +36,7 @@
 <body>
     <!--barra de navegacao-->
     <nav id="nav1" class="navbar">
-        <div id="main" class="container bg-warning ">
+        <div id="main" class="container  ">
             <a href="" class="navbar-brand"> CFM</a>
             <span class="navbar-text">portuguese</span>
         </div>

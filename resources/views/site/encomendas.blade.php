@@ -31,6 +31,7 @@
 
         #nav2 {
             background-color: #2d2c55;
+            
         }
 
         /*side navbar test*/
@@ -77,18 +78,22 @@
         /*body things*/
         #bodyDiv {
             width: 100%;
+            height: 200px;
         }
     </style>
 </head>
 
 <body>
+    <!--navbar principal-->
     <nav id='nav1' class="navbar navbar-expand-lg bg-success">
         <div id='main' class="container">
             <a href="" class="navbar-brand">CFM</a>
             <span class="navbar-text float-right">portuguese</span>
         </div>
     </nav>
-    <nav class="navbar navbar-expand" id="nav2">
+
+    <!--segunda navbar-->
+    <nav class="navbar navbar-expand bg-dark" id="nav2">
 
         <ul class="list1">
             <li><a href="">
@@ -106,11 +111,13 @@
         </ul>
 
     </nav>
-
+        <!--sidebar menu-->
     <div class="main">
         <div class="menu bg-dark">
             <h2 id="logo"></h2>
-            <a href="#"><ion-icon class="pr-3" name="home-outline"></ion-icon><span class="ms-3"></span>Home</a>
+            <a href="#"><span class="material-symbols-outlined pr-3">
+                    home
+                </span>Home</a>
             <a href="#"><ion-icon class="pr-3" name="ticket-outline"></ion-icon><span></span>Bilheteria</a>
             <a href="#"><span class="material-symbols-outlined pr-3">
                     package
@@ -121,9 +128,9 @@
             <a href="#"><span class="material-symbols-outlined pr-3">
                     summarize
                 </span>Relatórios</a>
-           
-        </div>
 
+        </div>
+        <!--area central-->
         <div class="bg-dark mt-4 ml-4 mr-4 mb-4" id="bodyDiv">
             <div id="centerbody" class="bg-info mt-4 mr-4 ml-4"></div>
             <table class="table table-stripped">
