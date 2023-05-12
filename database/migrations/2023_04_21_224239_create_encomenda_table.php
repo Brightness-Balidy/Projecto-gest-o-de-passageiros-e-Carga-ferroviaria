@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('encomenda', function (Blueprint $table) {
             $table->id();
+            $table->integer('codigo');
+            $table->integer('contacto_destino');
+            $table->integer('cliente_id');
+            $table->integer('funcionario_id');
+            $table->string('estado');
+            $table->integer('viagem_id');
+            $table->integer('categoria_id');
             $table->timestamps();
         });
     }

@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('viagem', function (Blueprint $table) {
             $table->id();
+            $table->date('data');
+            $table->varchar('local_partida');
+            $table->string('destino');
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('relatorio', function (Blueprint $table) {
             $table->id();
+            $table->string('descricao');
+            $table->integer('cliente');
+            $table->integer('encomenda');
+            $table->integer('vendas');
+            $table->integer('bagagens');
             $table->timestamps();
         });
     }

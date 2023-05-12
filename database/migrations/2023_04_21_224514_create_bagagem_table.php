@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('bagagem', function (Blueprint $table) {
             $table->id();
+            $table->integer('codigo');
+            $table->integer('bilhete_id');
+            $table->integer('viagem_id');
+            $table->integer('categoria');
             $table->timestamps();
         });
     }

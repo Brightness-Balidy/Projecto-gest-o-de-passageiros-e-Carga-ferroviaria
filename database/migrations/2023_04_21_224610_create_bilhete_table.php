@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('bilhete', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('sobrenome');
+            $table->integer('contacto');
             $table->timestamps();
+            $table->integer('destino');
+            $table->integer('assento');
+            
         });
     }
 

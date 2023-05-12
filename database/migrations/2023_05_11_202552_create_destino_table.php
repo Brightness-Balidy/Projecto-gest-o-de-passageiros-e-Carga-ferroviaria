@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('destino', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->double('preco');
+            $table->integer('distancia');
             $table->timestamps();
         });
     }

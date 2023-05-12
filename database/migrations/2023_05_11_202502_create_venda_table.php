@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('venda', function (Blueprint $table) {
             $table->id();
+            $table->date('data');
+            $table->integer('usuario_id');
+            $table->integer('bilhete_id');
             $table->timestamps();
         });
     }
