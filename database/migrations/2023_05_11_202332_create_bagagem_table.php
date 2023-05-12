@@ -16,9 +16,16 @@ return new class extends Migration
         Schema::create('bagagem', function (Blueprint $table) {
             $table->id();
             $table->integer('codigo');
-            $table->integer('bilhete_id');
-            $table->integer('viagem_id');
-            $table->integer('categoria');
+
+            $table->unsignedBigInteger('bilhete_id');
+            $table->foreign('bilhete_id')->references('id')->on('bilhete')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('viagem_id');
+            $table->foreign('viagem_id')->references('id')->on('viagem')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('categoria_id');
+            $table->foreign('categoria_id')->references('id')->on('categoria')->onDelete('cascade')->onUpdate('cascade');
+            
             $table->timestamps();
         });
     }

@@ -16,10 +16,19 @@ return new class extends Migration
         Schema::create('relatorio', function (Blueprint $table) {
             $table->id();
             $table->string('descricao');
-            $table->integer('cliente');
-            $table->integer('encomenda');
-            $table->integer('vendas');
-            $table->integer('bagagens');
+
+            $table->unsignedBigInteger('cliente_id');
+            $table->foreign('cliente_id')->references('id')->on('cliente')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('encomenda_id');
+            $table->foreign('encomenda_id')->references('id')->on('encomenda')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('vendas_id');
+            $table->foreign('vendas_id')->references('id')->on('venda')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('bagagem_id');
+            $table->foreign('bagagem_id')->references('id')->on('bagagem')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }

@@ -16,8 +16,11 @@ return new class extends Migration
         Schema::create('viagem', function (Blueprint $table) {
             $table->id();
             $table->date('data');
-            $table->varchar('local_partida');
-            $table->string('destino');
+            $table->string('local_partida');
+
+            $table->unsignedBigInteger('destino_id');
+            $table->foreign('destino_id')->references('id')->on('destino')->onDelete('cascade')->onUpdate('cascade');
+            
             $table->timestamps();
         });
     }
