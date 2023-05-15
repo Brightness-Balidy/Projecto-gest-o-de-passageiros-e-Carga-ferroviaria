@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class BagagemController extends Controller
 {
-    /**
+    /**w
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
