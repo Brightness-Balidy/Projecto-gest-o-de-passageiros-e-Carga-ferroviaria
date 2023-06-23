@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Encomenda;
 
 class EncomendaController extends Controller
 {
@@ -13,7 +14,9 @@ class EncomendaController extends Controller
      */
     public function index()
     {
-        //
+        //return "Index";
+        $encomenda= Encomenda::all();
+        return dd($encomenda);
     }
 
     /**

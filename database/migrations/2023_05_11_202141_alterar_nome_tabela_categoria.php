@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::rename('_categoria', 'categoria');
+      //  Schema::rename('_categoria', 'categoria');
     }
 
     /**

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('venda', function (Blueprint $table) {
+        Schema::create('vendas', function (Blueprint $table) {
             $table->id();
             $table->date('data');
 
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('bilhete_id');
-            $table->foreign('bilhete_id')->references('id')->on('bilhete')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('bilhete_id')->references('id')->on('bilhetes')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

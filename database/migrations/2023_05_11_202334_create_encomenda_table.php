@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('encomenda', function (Blueprint $table) {
+        Schema::create('encomendas', function (Blueprint $table) {
             $table->id();
             $table->integer('codigo');
             $table->integer('contacto_destino');
             
             $table->unsignedBigInteger('cliente_id');
-            $table->foreign('cliente_id')->references('id')->on('cliente')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('usuario_id');
             $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
@@ -27,10 +27,10 @@ return new class extends Migration
             $table->string('estado');
 
             $table->unsignedBigInteger('viagem_id');
-            $table->foreign('viagem_id')->references('id')->on('viagem')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('viagem_id')->references('id')->on('viagens')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('categoria_id');
-            $table->foreign('categoria_id')->references('id')->on('categoria')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

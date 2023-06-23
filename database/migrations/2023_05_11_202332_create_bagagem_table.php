@@ -13,18 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bagagem', function (Blueprint $table) {
+        Schema::create('bagagens', function (Blueprint $table) {
             $table->id();
             $table->integer('codigo');
 
             $table->unsignedBigInteger('bilhete_id');
-            $table->foreign('bilhete_id')->references('id')->on('bilhete')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('bilhete_id')->references('id')->on('bilhetes')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('viagem_id');
-            $table->foreign('viagem_id')->references('id')->on('viagem')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('viagem_id')->references('id')->on('viagens')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('categoria_id');
-            $table->foreign('categoria_id')->references('id')->on('categoria')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade')->onUpdate('cascade');
             
             $table->timestamps();
         });

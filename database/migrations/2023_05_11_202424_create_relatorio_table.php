@@ -13,21 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('relatorio', function (Blueprint $table) {
+        Schema::create('relatorios', function (Blueprint $table) {
             $table->id();
             $table->string('descricao');
 
             $table->unsignedBigInteger('cliente_id');
-            $table->foreign('cliente_id')->references('id')->on('cliente')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('encomenda_id');
-            $table->foreign('encomenda_id')->references('id')->on('encomenda')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('encomenda_id')->references('id')->on('encomendas')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('vendas_id');
-            $table->foreign('vendas_id')->references('id')->on('venda')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('vendas_id')->references('id')->on('vendas')->onDelete('cascade')->onUpdate('cascade');
 
             $table->unsignedBigInteger('bagagem_id');
-            $table->foreign('bagagem_id')->references('id')->on('bagagem')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('bagagem_id')->references('id')->on('bagagens')->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
         });

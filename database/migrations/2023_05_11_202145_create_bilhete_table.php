@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bilhete', function (Blueprint $table) {
+        Schema::create('bilhetes', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
             $table->string('sobrenome');
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
             
             $table->unsignedBigInteger('destino_id');
-            $table->foreign('destino_id')->references('id')->on('destino')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('destino_id')->references('id')->on('destinos')->onDelete('cascade')->onUpdate('cascade');
 
             $table->integer('assento');
 
