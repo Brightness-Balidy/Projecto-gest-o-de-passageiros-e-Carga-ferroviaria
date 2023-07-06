@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BilheteController;
 use App\Http\Controllers\EncomendaController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('encomenda', EncomendaController::class);
-
+Route::resource('bilhete', BilheteController::class);
 
 Route::get('/', function () {
     return view('welcome');

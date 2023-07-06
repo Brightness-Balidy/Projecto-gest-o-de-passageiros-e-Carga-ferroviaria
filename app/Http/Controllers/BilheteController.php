@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\bilhete;
 
 class BilheteController extends Controller
 {
@@ -13,7 +14,8 @@ class BilheteController extends Controller
      */
     public function index()
     {
-        //
+        $bilhete = bilhete::all();
+        return dd($bilhete);
     }
 
     /**
