@@ -15,8 +15,10 @@ class EncomendaController extends Controller
     public function index()
     {
         //return "Index";
-        $encomenda= Encomenda::all();
-        return dd($encomenda);
+        //$encomenda= Encomenda::all();
+        //return dd($encomenda);
+        //return view('site/encomendas');
+        return view('site/home');
     }
 
     /**

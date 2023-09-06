@@ -111,7 +111,7 @@
         </ul>
 
     </nav>
-        <!--sidebar menu-->
+        <!--sidenavbar-->
     <div class="main">
         <div class="menu bg-dark">
             <h2 id="logo"></h2>

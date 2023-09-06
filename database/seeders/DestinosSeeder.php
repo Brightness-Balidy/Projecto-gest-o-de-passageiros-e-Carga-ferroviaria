@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use App\Models\Destino;
 
-class UsersSeeder extends Seeder
+class DestinosSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,11 +15,10 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-      User::create([
-        'name' => 'Henry',
-        'sobrenome' => 'Balidy',
-        'email' => 'henry@balidy.mz',
-        'password' => bcrypt('henry26'),
-      ]);
+        Destino::create([
+            'nome' => 'Caia',
+            'preco' => '550',
+            'distancia' => '3000', 
+        ]);
     }
 }
