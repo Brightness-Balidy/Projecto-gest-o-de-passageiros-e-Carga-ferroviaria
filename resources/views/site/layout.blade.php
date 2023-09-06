@@ -16,6 +16,10 @@
             margin-left:20%;
             
         }
+        a:hover {
+            text-decoration: none;
+            color: #fff;
+        }
 
         .list1 {
             /*display:inline-flex;*/
@@ -90,10 +94,13 @@
     <!--navbar principal-->
 
     <nav class="teal align-items-right" id="nav1">
-        <div class="nav-wrapper container teal  lightgreen-2">
-            <a href="#" class="brand-logo center">CFM</a>
+        <div class="nav-wrapper container teal lightgreen-2">
+            <ul class="left">
+                <li>hello</li>
+            </ul>
+            <a href="#" class="brand-logo center links">CFM</a>
             <ul id="nav-mobile" class="right">
-                <li><a href="#" id="homeli" onclick="esconder()">HOME</a><a href="#" id="homeli2" onclick="mostrar()">home</a></li>
+                <li><a href="#" id="homeli" onclick="esconder()" class="links">HOME</a><a href="#" class="links" id="homeli2" onclick="mostrar()">home</a></li>
             </ul>
             
         </div>
@@ -112,13 +119,17 @@
         let minhaSide = document.getElementById('slide-out');
         let lihome = document.getElementById('homeli');
         let lihome2 = document.getElementById('homeli2');
-
+        let navPrincipal= document.getElementById('nav1');
         lihome2.style.display='none';
+
         function esconder(){
-            
+            minhaSide.style.transition ='all 0.5s';
             minhaSide.style.display='none';
             lihome.style.display ='none';
             lihome2.style.display='block';
+            navPrincipal.style.width = '100%';
+            navPrincipal.style.marginLeft = '0px';
+            
 
         }
         function mostrar(){
@@ -126,6 +137,8 @@
                 minhaSide.style.display = 'block';
                 lihome2.style.display ='none';
                 lihome.style.display ='block';
+                navPrincipal.style.width='80%';
+                navPrincipal.style.marginLeft='20%';
 
             }
         }
