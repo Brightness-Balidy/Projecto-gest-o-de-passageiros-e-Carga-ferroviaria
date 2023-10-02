@@ -112,8 +112,8 @@
     <!--sidenav-->
         <ul id="slide-out" class="sidenav sidenav-fixed teal lightgreen-2">
             <li id="onelist"><a href="#!" id="homeli" onclick="esconder()">Home</a><a href="#!" id="homeli2" onclick="mostrar()">home</a></li>
-            <li ><a href="#!">Home</a></li>
-            <li ><a href="#!">Home</a></li>
+            <li ><a href="#!">Encomendas</a></li>
+            <li ><a href="#!">Bilheteria</a></li>
             <li ><a href="#!">Home</a></li>
         </ul>
 

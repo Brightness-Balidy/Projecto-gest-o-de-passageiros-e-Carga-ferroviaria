@@ -6,7 +6,7 @@
     background-color: darkslategrey;
   }
     /*body things*/
-    .bodyDiv{
+    .rowCont{
        /* background-color: brown;*/
         margin-left: 310px;
         margin-right: 50px;
@@ -23,53 +23,35 @@
 </style> 
 <!--a row que vai conter os elementos centrais-->
 <!--cada elemento deve estar dentro da sua propria col-->
-<div class="row container bg-warning bodyDiv" > 
+<div class= "row container rowCont" id="rowCont" >
+  <div class="row">
+    <div class="col s4"><i class="material-icons large">flash_on</i><p>este sistema é extremamente fácil de usar, e é de tamanha eficiencia</p></div>
+    <div class="col s4"><i class="material-icons large">people</i><p>é Um sistema que foi desenhado para uso entre vários usuários da equipe de trabalho</p></div>
+    <div class="col s4"><i class="material-icons large">work</i><p>Tem o objectivo também de ajudar a manter o fluxo de trabalho constante para que não haja situações em que o trabalho deve ser interompido</p></div>
+  </div>
 
-     
-    <!--<div class="col s12 m6 ">
-
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Bem Vindo</span>
-          <p>Este é o sistema ferroviario de gestão de passageiros e carga, tanto acompanhada como bagagens não acompanhadas.<br>hehehe</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col s12 m6">
-        <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">Card Title</span>
-            <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
+  <div class="row">
+  @foreach ($destinos as $destino)
+  <div class="col s12 m4">
+      <div class="card">
+          <div class="card-image">
+            <img src="{{$destino->imagem}}">
+            
+            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
           </div>
-          <div class="card-action">
-            <a href="#">This is a link</a>
-            <a href="#">This is a link</a>
+          <div class="card-content">
+              <span class="card-title">{{$destino-> nome}}</span>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ex sed in quaerat ducimus? Consectetur ipsa asperiores adipisci dolore. Perspiciatis..</p>
           </div>
         </div>
-    -->
-    @foreach($destinos as $destino)
-        
-        <div class="col s12 m4">
-            <div class="card small">
-              <div class="card-image">
-                <img src="{{$destino->imagem}}">
-                <span class="card-title">{{$destino-> nome}}</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-              </div>
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-              </div>
-            </div>
-          @endforeach
-        
-        </div>
-        </div>
+  </div>
+  @endforeach 
+</div>
+  <div class="col ">
+
+  </div>
+  </div>
+
         
         <!--<div class="row  bg-success" id="secondroww">-->
          <!-- <ul class="collection">
@@ -84,20 +66,6 @@
                 <a href="#!" class="secondary-content"></a>
               </li>
             @endforeach
-
-            
-
-            </ul>-->
-            
-            <!--DIVS DOS DESTINOS-->
-            
-
-              
-          </div>
-
-          
-          
-         <!-- </div>-->
             
               
 
