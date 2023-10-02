@@ -87,6 +87,8 @@
         /*coisas da sidenav*/
         #onelist{
             top:20%;
+            padding-bottom: 20%;
+            padding-left: 70%;
         }
     </style>
 </head>
@@ -95,12 +97,12 @@
 
     <nav class="teal align-items-right" id="nav1">
         <div class="nav-wrapper container teal lightgreen-2">
-            <ul class="left">
+            <ul id="hellobut" class="left ">
                 <li>hello</li>
             </ul>
-            <a href="#" class="brand-logo center links">CFM</a>
-            <ul id="nav-mobile" class="right">
-                <li><a href="#" id="homeli" onclick="esconder()" class="links">HOME</a><a href="#" class="links" id="homeli2" onclick="mostrar()">home</a></li>
+            <a href="#" class="brand-logo center links " id="centrallogo">CFM</a>
+            <ul id="nav-mobile" class="right " id="hellobut2">
+                <li><a href="#" class="links">HOME</a></li>
             </ul>
             
         </div>
@@ -109,7 +111,7 @@
 
     <!--sidenav-->
         <ul id="slide-out" class="sidenav sidenav-fixed teal lightgreen-2">
-            <li id="onelist"><a href="#!">Home</a></li>
+            <li id="onelist"><a href="#!" id="homeli" onclick="esconder()">Home</a><a href="#!" id="homeli2" onclick="mostrar()">home</a></li>
             <li ><a href="#!">Home</a></li>
             <li ><a href="#!">Home</a></li>
             <li ><a href="#!">Home</a></li>
@@ -121,29 +123,44 @@
         let lihome2 = document.getElementById('homeli2');
         let navPrincipal= document.getElementById('nav1');
         lihome2.style.display='none';
+        let botao = document.getElementById('hellobut');
+        let centro = document.getElementById('centrallogo');
+        let botao2 = document.getElementById('hellobut2');
 
         function esconder(){
-            minhaSide.style.transition ='all 0.5s';
-            minhaSide.style.display='none';
+            //minhaSide.style.transition ='all 0.5s';
+            //minhaSide.style.display='none';
             lihome.style.display ='none';
-            lihome2.style.display='block';
+            lihome2.style.display ='block';
             navPrincipal.style.width = '100%';
             navPrincipal.style.marginLeft = '0px';
-            
+            minhaSide.style.transform = 'translateX(-80%)';
+            minhaSide.style.transition = 'transform 0.4s ease';
+            botao.style.paddingLeft = '0%';
+            centro.style.paddingLeft ='0%';
+            centro.style.transform = 'translateX(-100%)';
+            centro.style.transition = 'transform 0.4s ease';
+            botao2.style.paddingLeft ='0%'; 
+
 
         }
         function mostrar(){
-            if(minhaSide.style.display == 'none'){
-                minhaSide.style.display = 'block';
+            if(minhaSide.style.transform == 'translateX(-80%)'){
+
+                //minhaSide.style.display = 'block';
                 lihome2.style.display ='none';
                 lihome.style.display ='block';
-                navPrincipal.style.width='80%';
-                navPrincipal.style.marginLeft='20%';
-
+                //navPrincipal.style.width='80%';
+                //navPrincipal.style.marginLeft='20%';
+                minhaSide.style.transform = 'translateX(0%)';
+                botao.style.paddingLeft='25%';
+                botao2.style.paddingLeft ='6.25%';
+                centro.style.paddingLeft='20%';
+                //centro.style.transform ='translateX(100%)';
+                //centro.style.transition ='transform 0.4s ease';
             }
         }
        
-        
        </script>
     @yield('conteudo')
     </body>

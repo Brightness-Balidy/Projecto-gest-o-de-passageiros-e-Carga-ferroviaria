@@ -16,9 +16,10 @@ class DestinosSeeder extends Seeder
     public function run()
     {
         Destino::create([
-            'nome' => 'Caia',
-            'preco' => '550',
+            'nome' => 'Chaimite',
+            'preco' => '1000',
             'distancia' => '3000', 
+            'imagem' => 'https://via.placeholder.com/400x400.png/00ff22?text=qui'
         ]);
     }
 }
