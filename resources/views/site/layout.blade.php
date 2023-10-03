@@ -97,9 +97,6 @@
 
     <nav class="teal align-items-right" id="nav1">
         <div class="nav-wrapper container teal lightgreen-2">
-            <ul id="hellobut" class="left ">
-                <li>hello</li>
-            </ul>
             <a href="#" class="brand-logo center links " id="centrallogo">CFM</a>
             <ul id="nav-mobile" class="right " id="hellobut2">
                 <li><a href="#" class="links">HOME</a></li>
@@ -111,10 +108,10 @@
 
     <!--sidenav-->
         <ul id="slide-out" class="sidenav sidenav-fixed teal lightgreen-2">
-            <li id="onelist"><a href="#!" id="homeli" onclick="esconder()">Home</a><a href="#!" id="homeli2" onclick="mostrar()">home</a></li>
-            <li ><a href="#!">Encomendas</a></li>
-            <li ><a href="#!">Bilheteria</a></li>
-            <li ><a href="#!">Home</a></li>
+            <li id="onelist"><a href="#!" id="homeli" onclick="esconder()"><i class="material-icons small">dehaze</i></a><a href="#!" id="homeli2" onclick="mostrar()"><i class="material-icons small">dehaze</i></a></li>
+            <li ><a href="#!"><i class="material-symbols-outlined small">box</i>Encomendas</a></li>
+            <li ><a href="#!"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>
+            <li ><a href="#!"><i class="material-symbols-outlined small">train</i>Viagem</a></li>
         </ul>
 
        <script>
@@ -156,8 +153,8 @@
                 botao.style.paddingLeft='25%';
                 botao2.style.paddingLeft ='6.25%';
                 centro.style.paddingLeft='20%';
-                //centro.style.transform ='translateX(100%)';
-                //centro.style.transition ='transform 0.4s ease';
+                centro.style.transform ='translateX(100%)';
+                centro.style.transition ='transform 0.4s ease';
             }
         }
        
