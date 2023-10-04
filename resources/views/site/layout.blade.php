@@ -88,7 +88,7 @@
         #onelist{
             top:20%;
             padding-bottom: 20%;
-            padding-left: 70%;
+            padding-left: 75%;
         }
     </style>
 </head>
@@ -109,7 +109,7 @@
     <!--sidenav-->
         <ul id="slide-out" class="sidenav sidenav-fixed teal lightgreen-2">
             <li id="onelist"><a href="#!" id="homeli" onclick="esconder()"><i class="material-icons small">dehaze</i></a><a href="#!" id="homeli2" onclick="mostrar()"><i class="material-icons small">dehaze</i></a></li>
-            <li ><a href="#!"><i class="material-symbols-outlined small">box</i>Encomendas</a></li>
+            <li ><a href="{{route('site.encomendas')}}"><i class="material-symbols-outlined small">box</i>Encomendas</a></li>
             <li ><a href="#!"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>
             <li ><a href="#!"><i class="material-symbols-outlined small">train</i>Viagem</a></li>
         </ul>
