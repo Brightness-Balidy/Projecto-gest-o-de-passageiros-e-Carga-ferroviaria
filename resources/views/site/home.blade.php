@@ -3,7 +3,7 @@
 
 <style>
   body{
-    background-color: darkslategrey;
+    /*background-color: darkslategrey;*/
   }
     /*body things*/
     .rowCont{
@@ -22,17 +22,42 @@
     .icones{
       padding-left: 35%;
     }
+
+    /*seccao de clientes*/
+    #botaoNovo{
+      padding-left: 50%;
+    }
+    #cardPannel{
+        height: 90%;
+    }
+
+    #iconPackage{
+        padding-bottom: 20%;
+        padding-top: 10%;
+        
+    }
+    #iconPackage2{
+        margin-left: 30%;
+        margin-top: 5%; 
+    
+    }
+    
+
     
 </style> 
 <!--a row que vai conter os elementos centrais-->
 <!--cada elemento deve estar dentro da sua propria col-->
 <div class= "row container rowCont" id="rowCont" >
+
+  <!--seccao de informacao sobre o sistema-->
   <div class="row">
     <div class="col s4"><i class="material-icons large icones">flash_on</i><p class="center-align">este sistema é de uso fácil e extremamente intuitivo, e permite obter eficiencia no trabalho</p></div>
     <div class="col s4"><i class="material-icons large icones" >people</i><p class="center-align" >é Um sistema que foi desenhado para uso entre vários usuários da equipe de trabalho</p></div>
     <div class="col s4"><i class="material-icons large icones">work</i><p class="center-align">Tem o objectivo também de ajudar a manter o fluxo de trabalho constante para que não haja situações em que o trabalho deve ser interompido</p></div>
   </div>
 <!--uma nova row deve ser criada para fazer uma fila de elementos, cada elemento deve estar dentro da sua propria col-->
+
+<!--seccao de cards de destinos-->
   <div class="row">
   @foreach ($destinos as $destino)
   <div class="col s4">
@@ -52,8 +77,41 @@
 </div>
   @endforeach 
 </div>
-  <div class="col ">
-
+  <!--seccao de cadastro de clientes-->
+  <div class="row">
+    <div class="col s12">
+      <div class="card blue-grey darken-1" id="cardPannel">
+        <div class="card-content white-text">
+          <!--parte left do card-->
+          <div class="row">
+              <div class="col s6">
+          <span class="card-title left-align " id="cadastroTitulo"><h4><b>Cadastro de Novos clientes para uso dos serviços</b></h4></span> 
+      </div>
+          <div class="col s6 " id="botaoNovo"><a class="waves-effect waves-light btn-large pulse" >Novos Clientes</a> </div>
+          
+  </div>
+      <!--parte right do card-->
+      <div class="row">
+          <div class="col s6">
+              <h6 class=" ">Para que um cliente possa se beneficiar dos serviços disponibilizados é necessário que ele esteja cadastrado no sistema, para facilitar as actividades.</h6>
+          </div>
+          <div class="col s6   ">
+              <i class="material-symbols-outlined medium " id="iconPackage2" >
+                  person
+              </i>
+              <i class="material-symbols-outlined large " id="iconPackage" >
+              person
+              </i>
+              <i class="material-symbols-outlined medium" >
+                  person
+              </i>
+          </div>
+          
+      </div>
+          </div>
+        
+      </div>
+    </div>
   </div>
   </div>
 
