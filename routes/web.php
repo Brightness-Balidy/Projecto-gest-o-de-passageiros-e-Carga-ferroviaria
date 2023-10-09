@@ -17,6 +17,7 @@ Route::resource('bilhete', BilheteController::class);
 Route::get('/', [SiteController::class, 'index']) ->name('site.index');
 Route::get('/', [EncomendaController::class, 'index']) ->name('site.encomendas');
 
+
 Route::get('/login', function(){
     return view('site/login');
 });

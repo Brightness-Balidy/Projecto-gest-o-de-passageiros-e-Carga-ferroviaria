@@ -29,7 +29,7 @@
 <div class= "row container rowCont" id="rowCont" >
   <div class="row">
     <div class="col s4"><i class="material-icons large icones">flash_on</i><p class="center-align">este sistema é de uso fácil e extremamente intuitivo, e permite obter eficiencia no trabalho</p></div>
-    <div class="col s4"><i class="material-icons large icones">people</i><p class="center-align" >é Um sistema que foi desenhado para uso entre vários usuários da equipe de trabalho</p></div>
+    <div class="col s4"><i class="material-icons large icones" >people</i><p class="center-align" >é Um sistema que foi desenhado para uso entre vários usuários da equipe de trabalho</p></div>
     <div class="col s4"><i class="material-icons large icones">work</i><p class="center-align">Tem o objectivo também de ajudar a manter o fluxo de trabalho constante para que não haja situações em que o trabalho deve ser interompido</p></div>
   </div>
 <!--uma nova row deve ser criada para fazer uma fila de elementos, cada elemento deve estar dentro da sua propria col-->
