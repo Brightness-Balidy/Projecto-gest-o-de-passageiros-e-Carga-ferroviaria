@@ -99,7 +99,7 @@
         <div class="nav-wrapper container teal lightgreen-2">
             <a href="#" class="brand-logo center links " id="centrallogo">CFM</a>
             <ul id="nav-mobile" class="right " id="hellobut2">
-                <li><a href="#" class="links">HOME</a></li>
+                <li><a href= "{{ route('site.index') }}" class="links">HOME</a></li>
             </ul>
             
         </div>

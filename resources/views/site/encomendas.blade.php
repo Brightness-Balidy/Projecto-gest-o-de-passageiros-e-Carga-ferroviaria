@@ -5,7 +5,7 @@
 
 <style>
     body{
-        background-color: darkslategrey;
+       /* background-color: darkslategrey;*/
     }
     .rowCont{
        /* background-color: brown;*/
@@ -48,7 +48,7 @@
                     <div class="col s6">
                 <span class="card-title bg-success "><b>Ciar Encomendas</b></span> 
             </div>
-                <div class="col s6 " id="botaoNovo"><a class="waves-effect waves-light btn-large pulse" >Nova</a> </div>
+                <div class="col s6 " id="botaoNovo"><a class="waves-effect waves-light btn-large pulse" >Nova Encomenda</a> </div>
                 
         </div>
             <!--parte right do card-->
