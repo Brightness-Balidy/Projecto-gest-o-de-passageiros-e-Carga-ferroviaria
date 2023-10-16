@@ -47,20 +47,34 @@
         <div class="row align-items-center">
             <div class="col-md-10 mx-auto col-lg-4 bg-light border rounded-3 border-info">
                 <h3 class="text-center mt-2">Login</h3>
-                <form action="p-4 p-md-5 border rounded-3">
+
+                <!--caso ocorra algum erro exibimos a mensagem na tela-->
+                @if ($mensagem = Session::get('erro'))
+                {{ $mensagem }}
+                @endif
+
+                <!---listar todos os erros que ocorrerem e exibir-->
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                    {{ $error }} <br>
+                    @endforeach
+                @endif
+                <form action= "{{route('login.auth')}}" method="POST" class="p-4 p-md-5 border rounded-3">
+                    
                     <div class="form-floating mb-3 mt-4">
-                        <input type="Email" class="form-control" id="inputEmail" placeholder="Email">
+                        @csrf
+                        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="email">
                         <label for="inputEmail">Email</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="password">
+                        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="password">
                         <label for="inputPassword">Password</label>
                         <p>
                             <small class="text-muted">
                                 <a href="">esqueci-me da senha</a>
                             </small>
                         <p>
-                        <button type="button" class="btn btn-primary btn-lg mt-3">Entrar</button>
+                        <button type="submit" class="btn btn-primary btn-lg mt-3">Entrar</button>
                     </div>
                 </form>
             </div>

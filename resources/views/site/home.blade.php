@@ -87,7 +87,7 @@
               <div class="col s6">
           <span class="card-title left-align " id="cadastroTitulo"><h4><b>Cadastro de Novos clientes para uso dos serviços</b></h4></span> 
       </div>
-          <div class="col s6 " id="botaoNovo"><a class="waves-effect waves-light btn-large pulse" >Novos Clientes</a> </div>
+          <div class="col s6 " id="botaoNovo"><a class="waves-effect waves-light btn-large pulse" >Novos Clientes</a></div>
           
   </div>
       <!--parte right do card-->

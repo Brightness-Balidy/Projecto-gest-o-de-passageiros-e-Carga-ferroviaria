@@ -16,13 +16,17 @@
         margin-top:2%;
         
     }
+   
+    /*icones de encomenda*/
+   
+    
     #cardPannel{
         height: 80%;
     }
-    /*icones de encomenda*/
+
     #iconPackage{
-        margin-left: 0%;
-        padding-top: 25%;
+        padding-bottom: 20%;
+        padding-top: 10%;
         
     }
     #iconPackage2{
@@ -31,9 +35,7 @@
     
     }
 
-
     #botaoNovo{
-    
         padding-left: 50%;
     }
 </style>
@@ -46,16 +48,16 @@
                 <!--parte left do card-->
                 <div class="row">
                     <div class="col s6">
-                <span class="card-title bg-success "><b>Ciar Encomendas</b></span> 
+                <span class="card-title bg-success"><h4><b>Espaço de Criação de Encomendas</b></h4></span> 
             </div>
-                <div class="col s6 " id="botaoNovo"><a class="waves-effect waves-light btn-large pulse" >Nova Encomenda</a> </div>
+                <div class="col s6" id="botaoNovo"><a class="waves-effect waves-light btn-large pulse" >Nova Encomenda</a> </div>
                 
         </div>
             <!--parte right do card-->
             <div class="row">
                 <div class="col s6">
-                    <h3 class=" ">I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</h3>
+                    <h6 class=" ">I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</h6>
                 </div>
                 <div class="col s6  ">
                     <i class="material-symbols-outlined medium " id="iconPackage2" >
@@ -74,6 +76,22 @@
               
             </div>
           </div>
+    </div>
+    <div class="row">
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+        </div>
+          
     </div>
 </div>
 <!--
