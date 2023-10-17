@@ -22,6 +22,7 @@ Route::get('/encomendas', [SiteController::class, 'encomenda']) ->name('site.enc
 //rotas de login
 Route::view('/login', 'login.login')-> name('login.login');
 Route::post('/auth', [LoginController::class,'auth'])->name('login.auth');
+Route::get('/logout',[LoginController::class,'logout'])->name('login.logout');
 
 //rota da dashboard
 Route::get('/admin/dashboard',[DashboardController::class,'index'])-> name('admin.dashboard');

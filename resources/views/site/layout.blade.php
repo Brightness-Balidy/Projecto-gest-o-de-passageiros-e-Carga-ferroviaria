@@ -90,29 +90,68 @@
             padding-bottom: 20%;
             padding-left: 75%;
         }
+        #userlink{
+            padding-top:80%;
+            
+        }
     </style>
 </head>
 <body>
+    <!--Data target do dropdown-->
+    <!--not working-->
+    <ul id='dropdown1' class='dropdown-content'>
+        <li><a href="{{route('login.logout')}}">Log out</a></li>
+   </ul>
+
     <!--navbar principal-->
 
     <nav class="teal align-items-right" id="nav1">
         <div class="nav-wrapper container teal lightgreen-2">
             <a href="#" class="brand-logo center links " id="centrallogo">CFM</a>
-            <ul id="nav-mobile" class="right " id="hellobut2">
-                <li><a href= "{{ route('site.index') }}" class="links">HOME</a></li>
+            <ul id="nav-mobile" class="left " id="hellobut2">
+                <li><a href= "" class="links" >HOME</a></li>
             </ul>
+
+            @auth
+            <ul id="nav-mobile" class="right">
+                <li><a href="#" class="dropdown-trigger" data-target='dropdown1'> Olá {{auth()->user()->name}} <i class="material-symbols-outlined right">expand_more</i></a></li>
+            </ul>
+            @else
+            <ul id="nav-mobile" class="right">
+                <li><a href="{{route('login.login')}}" >Login</a></li>
+            </ul>
+            @endauth
             
         </div>
 
     </nav>
 
+    
     <!--sidenav-->
         <ul id="slide-out" class="sidenav sidenav-fixed teal lightgreen-2">
             <li id="onelist"><a href="#!" id="homeli" onclick="esconder()"><i class="material-icons small">dehaze</i></a><a href="#!" id="homeli2" onclick="mostrar()"><i class="material-icons small">dehaze</i></a></li>
             <li ><a href="{{route('site.encomendas')}}"><i class="material-symbols-outlined small">box</i>Encomendas</a></li>
             <li ><a href="#!"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>
             <li ><a href="#!"><i class="material-symbols-outlined small">train</i>Viagem</a></li>
+            
+            
+
+            
+
+           
+            
         </ul>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+        <script>
+            //dropdown
+            var elemDrop = document.querySelectorAll('.dropdown-trigger');
+            var instanceDrop = M.Dropdown.init(elemDrop,{
+            coverTrigger: false,
+            constrainWidth: false
+       });
+        </script>
 
        <script>
         let minhaSide = document.getElementById('slide-out');
