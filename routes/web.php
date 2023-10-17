@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BilheteController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DestinoController;
 use App\Http\Controllers\EncomendaController;
 use App\Http\Controllers\HomeController;
@@ -18,11 +19,12 @@ Route::resource('bilhete', BilheteController::class);
 Route::get('/', [SiteController::class, 'index' ]) ->name('site.index');
 Route::get('/encomendas', [SiteController::class, 'encomenda']) ->name('site.encomendas');
 
+//rotas de login
 Route::view('/login', 'login.login')-> name('login.login');
-
 Route::post('/auth', [LoginController::class,'auth'])->name('login.auth');
 
-
+//rota da dashboard
+Route::get('/admin/dashboard',[DashboardController::class,'index'])-> name('admin.dashboard');
 
 
 /*

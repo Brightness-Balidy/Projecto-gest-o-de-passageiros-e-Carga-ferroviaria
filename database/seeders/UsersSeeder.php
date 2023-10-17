@@ -21,5 +21,7 @@ class UsersSeeder extends Seeder
         'email' => 'henry@balidy.mz',
         'password' => bcrypt('henry26'),
       ]);
+      //henry26 1st user
+      //
     }
 }
