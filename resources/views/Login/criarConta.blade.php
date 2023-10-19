@@ -31,6 +31,9 @@
             height: 50px;
             width: 100%;
         }
+        #logdiv{
+          width: 50%;
+        }
     </style>
 </head>
 <body>
@@ -43,15 +46,10 @@
     </nav>
     <!--formulario de login-->
     <div id="divLog2" class="col "></div>
-    <div id="loginForm" class="container mt-5 ">
+    <div id="loginForm" class="container mt-1 ">
         <div class="row align-items-center">
-            <div class="col-md-10 mx-auto col-lg-4 bg-light border rounded-3 border-info">
-                <h3 class="text-center mt-2">Login</h3>
-
-                <!--caso ocorra algum erro exibimos a mensagem na tela-->
-                @if ($mensagem = Session::get('erro'))
-                {{ $mensagem }}
-                @endif
+            <div class="col-md-10 mx-auto col-lg-4 bg-light border rounded-3 border-info" id="logdiv">
+                <h3 class="text-center mt-2">Criar Conta</h3>
 
                 <!---listar todos os erros que ocorrerem e exibir-->
                 @if ($errors->any())
@@ -61,14 +59,22 @@
                 @endif
                 <form action= "{{route('login.auth')}}" method="POST" class="p-4 p-md-5 border rounded-3">
                     
-                    <div class="form-floating mb-3 mt-4">
+                    <div class="form-floating mb-2 mt-2">
                         @csrf
-                        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="email">
-                        <label for="inputEmail">Email</label>
+                        <input type="text" name="nome" class="form-control" id="inputEmail" placeholder="Nome">
+                        <label for="inputEmail">Nome</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="password">
-                        <label for="inputPassword">Password</label>
+                        <input type="text" name="sobrenome" class="form-control" id="inputPassword" placeholder="Sobrenome">
+                        <label for="inputPassword">Sobrenome</label>
+
+                        <div class="form-floating mb-3 mt-2">
+                          <input type="email" name="email" class="form-control" id="inputPassword" placeholder="email">
+                          <label for="inputPassword">Email</label>
+
+                          <div class="form-floating mb-3 mt-2">
+                            <input type="password" name="password" class="form-control" id="inputPassword" placeholder="password">
+                            <label for="inputPassword">Password</label>
                         <p>
                             <small class="text-muted">
                                 <a href="">esqueci-me da senha</a>

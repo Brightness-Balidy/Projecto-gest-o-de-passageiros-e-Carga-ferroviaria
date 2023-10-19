@@ -25,7 +25,7 @@ Route::post('/auth', [LoginController::class,'auth'])->name('login.auth');
 Route::get('/logout',[LoginController::class,'logout'])->name('login.logout');
 
 //rota da dashboard
-Route::get('/admin/dashboard',[DashboardController::class,'index'])-> name('admin.dashboard');
+Route::get('/admin/dashboard',[DashboardController::class,'index'])-> name('admin.dashboard')->middleware('auth', 'checkemail');
 
 
 /*
@@ -35,6 +35,8 @@ Route::get('/login', function(){
 Route::get('/encomendas', function (){
     return view('site/encomendas');
 });
-Route::get('/criar_conta',function(){
-    return view('admin/CriarConta');
+
 });*/
+Route::get('/criar',function(){
+    return view('login/criarConta');
+});
