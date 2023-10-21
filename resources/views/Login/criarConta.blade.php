@@ -57,24 +57,24 @@
                     {{ $error }} <br>
                     @endforeach
                 @endif
-                <form action= "{{route('login.auth')}}" method="POST" class="p-4 p-md-5 border rounded-3">
-                    
+                <form action= "{{route('users.store')}}" method="POST" class="p-4 p-md-5 border rounded-3">
+                  @csrf
                     <div class="form-floating mb-2 mt-2">
-                        @csrf
-                        <input type="text" name="nome" class="form-control" id="inputEmail" placeholder="Nome">
+                        <input type="text" name="nome" class="form-control" id="inputEmail" placeholder="nome">
                         <label for="inputEmail">Nome</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="text" name="sobrenome" class="form-control" id="inputPassword" placeholder="Sobrenome">
+                        <input type="text" name="sobrenome" class="form-control" id="inputPassword" placeholder="sobrenome">
                         <label for="inputPassword">Sobrenome</label>
-
+                    </div>
                         <div class="form-floating mb-3 mt-2">
                           <input type="email" name="email" class="form-control" id="inputPassword" placeholder="email">
                           <label for="inputPassword">Email</label>
-
-                          <div class="form-floating mb-3 mt-2">
+                    </div>
+                        <div class="form-floating mb-3 mt-2">
                             <input type="password" name="password" class="form-control" id="inputPassword" placeholder="password">
                             <label for="inputPassword">Password</label>
+                        </div>
                         <p>
                             <small class="text-muted">
                                 <a href="">esqueci-me da senha</a>

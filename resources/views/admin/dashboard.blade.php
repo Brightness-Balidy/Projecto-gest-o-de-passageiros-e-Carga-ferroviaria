@@ -1,1 +1,1 @@
-<h1>Olá {{auth()->user()->name}}</h1>
+<h1>Olá {{auth()->user()->nome}}</h1>

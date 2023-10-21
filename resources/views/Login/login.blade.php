@@ -69,6 +69,7 @@
                     <div class="form-floating mb-3">
                         <input type="password" name="password" class="form-control" id="inputPassword" placeholder="password">
                         <label for="inputPassword">Password</label>
+                        <input type="checkbox" name="remember"> lembrar-me
                         <p>
                             <small class="text-muted">
                                 <a href="">esqueci-me da senha</a>
