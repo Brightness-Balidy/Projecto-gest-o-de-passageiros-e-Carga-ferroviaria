@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="css/style.css">
+
     <style>
          #nav1 {
             width: 80%;
@@ -199,5 +202,10 @@
        
        </script>
     @yield('conteudo')
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{asset('js/chart.js')}}" ></script>
+    <script src="{{asset('js/main.js')}}"></script>
+    @stack('graficos')
     </body>
 </html>
