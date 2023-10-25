@@ -17,10 +17,10 @@
             width:30%;
         }*/
         body{
-            background-color: green;
+            background-color: rgb(5, 62, 5);
         }
         #nav1{
-            background-color: #EBEBBA;
+            background-color: #076f7c;
         }
         #linha-vertical{
             width:20px;

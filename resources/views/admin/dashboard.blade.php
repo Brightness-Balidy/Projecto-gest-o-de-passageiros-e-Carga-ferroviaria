@@ -30,7 +30,7 @@
 
 
 
-    <div class= "row container rowCont bg-success" id="rowCont" >
+    <div class= "row container rowCont " id="rowCont" >
          <!--seccao de informacao sobre o sistema-->
          <div class="row container" id="first">
             <div class="col s4" >
@@ -46,7 +46,7 @@
               <h3>{{$usuarios}}</h3>           
             </article>
           </div>
-          <div class="col s4"><article class="bg-gradient-blue card z-depth-4 ">
+          <div class="col s4 "><article class="bg-gradient-blue card z-depth-4 ">
             <i class="material-icons">shopping_cart</i>
             <p>Pedidos este mês</p>
             <h3>0 </h3>           

@@ -1,5 +1,5 @@
 @extends('site.layout')
-@section('title', 'Encomendas')
+@section('title', 'Clientes')
 @section('conteudo')
 
 
@@ -250,3 +250,5 @@
     }
 </script>-->
 @endsection
+
+

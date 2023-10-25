@@ -97,6 +97,29 @@
             padding-top:80%;
             
         }
+        #estender{
+            height: 60px;
+            margin-top: 0px;
+        }
+        #estender0{
+            height: 60px;
+            margin-top: 35px;
+            
+        }
+        #estender1{
+          height: 60px;  
+        }
+        #estender2{
+          height: 60px;  
+        }
+        #estender3{
+          height: 60px;  
+        }
+        #dimension{
+            height: 110px;
+            width: 100%;
+            background-image: image('img/comboio.jpg');
+        }
     </style>
 </head>
 <body>
@@ -112,7 +135,7 @@
         <div class="nav-wrapper container teal lightgreen-2">
             <a href="#" class="brand-logo center links " id="centrallogo">CFM</a>
             <ul id="nav-mobile" class="left " id="hellobut2">
-                <li><a href= "" class="links" >HOME</a></li>
+                <li><a href= "{{route('site.index')}}" class="links" >HOME</a></li>
             </ul>
 
             @auth
@@ -132,10 +155,13 @@
     
     <!--sidenav-->
         <ul id="slide-out" class="sidenav sidenav-fixed teal lightgreen-2">
-            <li id="onelist"><a href="#!" id="homeli" onclick="esconder()"><i class="material-icons small">dehaze</i></a><a href="#!" id="homeli2" onclick="mostrar()"><i class="material-icons small">dehaze</i></a></li>
-            <li ><a href="{{route('site.encomendas')}}"><i class="material-symbols-outlined small">box</i>Encomendas</a></li>
-            <li ><a href="#!"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>
-            <li ><a href="#!"><i class="material-symbols-outlined small">train</i>Viagem</a></li>
+            <!--<li id="onelist"><a href="#!" id="homeli" onclick="esconder()"><i class="material-icons small">dehaze</i></a><a href="#!" id="homeli2" onclick="mostrar()"><i class="material-icons small">dehaze</i></a></li>-->
+            <li><a href="#" class="brand-logo center links " id="estender"><h4>CFM</h4></a></li>
+            <li ><a href="{{route('admin.dashboard')}}" id="estender0"><i class="material-symbols-outlined small">box</i>Dashboard</a></li>
+            <li ><a href="{{route('site.encomendas')}}" id="estender1"><i class="material-symbols-outlined small" >box</i>Encomendas</a></li>
+            <li><a href="#!" id="estender2"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>
+            <li><a href="#!" id="estender2"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>
+            <li ><a href="#!" id="estender3"><i class="material-symbols-outlined small">train</i>Viagem</a></li>
             
             
 

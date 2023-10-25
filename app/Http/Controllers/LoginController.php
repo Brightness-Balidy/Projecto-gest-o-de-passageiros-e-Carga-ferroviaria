@@ -31,7 +31,7 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect(route('site.index'));
+        return redirect(route('login.login'));
     }
 
     public function create(){

@@ -43,3 +43,6 @@ Route::get('/encomendas', function (){
 Route::get('/criar',function(){
     return view('login/criarConta');
 });
+Route::get('/clientes',function(){
+    return view('site/clientes');
+});
