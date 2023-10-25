@@ -159,7 +159,7 @@
             <li><a href="#" class="brand-logo center links " id="estender"><h4>CFM</h4></a></li>
             <li ><a href="{{route('admin.dashboard')}}" id="estender0"><i class="material-symbols-outlined small">box</i>Dashboard</a></li>
             <li ><a href="{{route('site.encomendas')}}" id="estender1"><i class="material-symbols-outlined small" >box</i>Encomendas</a></li>
-            <li><a href="#!" id="estender2"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>
+            <li><a href="#!" id="estender2"><i class="material-symbols-outlined small">people</i>Clientes</a></li>
             <li><a href="#!" id="estender2"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>
             <li ><a href="#!" id="estender3"><i class="material-symbols-outlined small">train</i>Viagem</a></li>
             

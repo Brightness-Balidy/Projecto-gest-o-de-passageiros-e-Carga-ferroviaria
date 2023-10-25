@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Viagen;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,9 +21,10 @@ class DatabaseSeeder extends Seeder
             $this ->call([
 
                 //DestinosSeeder::class,
-                UsersSeeder::class,
+                //UsersSeeder::class,
                 //ClientesSeeder::class,
                 //CategoriasSeeder::class,
+                ViagenSeeder::class
             ]);
 
         // \App\Models\User::factory()->create([

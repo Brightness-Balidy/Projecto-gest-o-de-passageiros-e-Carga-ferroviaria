@@ -85,24 +85,24 @@
           <!--parte left do card-->
           <div class="row">
               <div class="col s6">
-          <span class="card-title left-align " id="cadastroTitulo"><h4><b>Cadastro de Novos clientes para uso dos serviços</b></h4></span> 
+          <span class="card-title left-align " id="cadastroTitulo"><h4><b>É necessário fazer o cadastro dos clientes</b></h4></span>
       </div>
-          <div class="col s6 " id="botaoNovo"><a class="waves-effect waves-light btn-large pulse" >Novos Clientes</a></div>
-          
+          <div class="col s6" id="botaoNovo"><a class="waves-effect waves-light btn-large pulse" >Cadastrar Clientes</a></div>
   </div>
+
       <!--parte right do card-->
-      <div class="row">
+        <div class="row">
           <div class="col s6">
-              <h6 class=" ">Para que um cliente possa se beneficiar dos serviços disponibilizados é necessário que ele esteja cadastrado no sistema, para facilitar as actividades.</h6>
+              <h6 class="">Para que um cliente possa se beneficiar dos serviços disponibilizados é necessário que ele esteja cadastrado no sistema, para facilitar as actividades.</h6>
           </div>
-          <div class="col s6   ">
+          <div class="col s6">
               <i class="material-symbols-outlined medium " id="iconPackage2" >
                   person
               </i>
               <i class="material-symbols-outlined large " id="iconPackage" >
               person
               </i>
-              <i class="material-symbols-outlined medium" >
+              <i class="material-symbols-outlined medium">
                   person
               </i>
           </div>

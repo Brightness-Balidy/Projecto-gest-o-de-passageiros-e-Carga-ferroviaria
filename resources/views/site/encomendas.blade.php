@@ -21,7 +21,7 @@
    
     
     #cardPannel{
-        height: 80%;
+        height: 100%;
     }
 
     #iconPackage{
@@ -44,6 +44,11 @@
     }
     #ajustarRow{
         width: 100%;
+    }
+
+    #imagem1{
+        width: 150px;
+        height: 150px;
     }
 </style>
 
@@ -70,9 +75,7 @@
                     <i class="material-symbols-outlined medium " id="iconPackage2" >
                         package_2
                     </i>
-                    <i class="material-symbols-outlined large " id="iconPackage" >
-                    package_2
-                    </i>
+                    <img src="img/mala.png" id="imagem1">
                     <i class="material-symbols-outlined medium" >
                         package_2
                     </i>
@@ -147,7 +150,7 @@
             
                 <div class="row titulo ">              
                   <h1 class="left">Encomendas</h1>
-                  <span class="right chip">234 encomendas cadastradas</span>  
+                  <span class="right chip">4 encomendas cadastradas</span>  
                 </div>
     
                <nav class="bg-gradient-green">
@@ -168,11 +171,12 @@
                       <tr>
                         <th></th>
                         <th>ID</th>  
-                        <th></th>
+                        <th>Peso</th>
                           
                           <th>Cliente</th>
                           <th>Categoria</th>
-                          <th>Estado</th>
+                          <th>Taxa</th>
+                          <th></th>
                       </tr>
                     </thead>
             
@@ -180,36 +184,40 @@
                       <tr>
                         <td><img src="img/package.png" class="circle "></td>
                         <td>#123</td>
-                        <td>Mouse USB</td>                    
+                        <td>12.00kg</td>                    
                         <td>Alberto</td>
                         <td>Eletrônicos</td>
+                        <td>120mt</td>
                         <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
                           <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
                       </tr>
                       <tr>
                         <td><img src="img/package.png" class="circle"></td>
                         <td>#123</td>
-                        <td>Tomate</td>                    
+                        <td>5.00kg</td>                    
                         <td>Jacinto</td>
                         <td>Generos frescos</td>
+                        <td>200mt</td>
                         <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
                           <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
                       </tr>
                       <tr>
                         <td><img src="img/package.png" class="circle"></td>
                         <td>#123</td>
-                        <td>Congelador</td>                    
+                        <td>10.00kg</td>                    
                         <td>Ialda</td>
                         <td>Eletrônicos</td>
+                        <td>300</td>
                         <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
                           <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
                       </tr>
                       <tr>
                         <td><img src="img/package.png" class="circle"></td>
                         <td>#123</td>
-                        <td>TV</td>                    
+                        <td>9kg</td>                    
                         <td>Henry</td>
                         <td>Eletrônicos</td>
+                        <td>600mt</td>
                         <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
                           <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
                       </tr>

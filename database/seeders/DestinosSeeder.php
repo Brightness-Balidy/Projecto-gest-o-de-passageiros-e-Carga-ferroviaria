@@ -14,11 +14,12 @@ class DestinosSeeder extends Seeder
      * @return void
      */
     public function run()
+
     {
         Destino::create([
-            'nome' => 'Chaimite',
-            'preco' => '1000',
-            'distancia' => '3000', 
+            'nome' => 'Marromeu',
+            'preco' => '450',
+            'distancia' => '850', 
             'imagem' => 'https://via.placeholder.com/400x400.png/00ff22?text=qui'
         ]);
     }
