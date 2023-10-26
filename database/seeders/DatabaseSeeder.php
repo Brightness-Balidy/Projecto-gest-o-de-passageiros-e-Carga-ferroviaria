@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
 
                 //DestinosSeeder::class,
                 //UsersSeeder::class,
-                //ClientesSeeder::class,
+                ClientesSeeder::class,
                 //CategoriasSeeder::class,
-                ViagenSeeder::class
+                //ViagenSeeder::class
             ]);
 
         // \App\Models\User::factory()->create([

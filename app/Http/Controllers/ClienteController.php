@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 class ClienteController extends Controller
@@ -13,7 +14,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        $clientes = Cliente::all();
+        return view('site.clientes',compact('clientes'));
     }
 
     /**
@@ -34,7 +36,22 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+       // $cliente = $request->input(['nome, sobrenome, contacto']);
+        
+
+        $number = mt_rand(1000000000, 9999999999);
+        if($this->clienteCodigoExiste($number)){
+            $number = mt_rand(1000000000, 9999999999);
+        }
+-
+        $request['codigo']= $number;
+        Cliente::create($request->all());
+        return redirect(route('site.cliente'));
+    }
+
+    public function clienteCodigoExiste($number){
+        return cliente::whereCodigo($number)->exists();
     }
 
     /**
@@ -45,7 +62,7 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -79,6 +96,8 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cliente = Cliente::find($id);
+        $cliente->delete();
+        return redirect()->route('site.clientes');
     }
 }

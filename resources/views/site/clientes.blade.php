@@ -50,14 +50,14 @@
 <div class="row container rowCont">
     <div class="row">
         <div class="col s12">
-            <div class="card blue-grey darken-1" id="cardPannel">
+            <div class="card bg-gradient-green darken-1" id="cardPannel">
               <div class="card-content white-text">
                 <!--parte left do card-->
                 <div class="row">
                     <div class="col s6">
-                <span class="card-title "><h4><b>Espaço de Criação de Encomendas</b></h4></span> 
+                <span class="card-title "><h4><b>Espaço de Criação de Clientes</b></h4></span> 
             </div>
-                <div class="col s6" id="botaoNovo"><a href="#modal1" class="waves-effect waves-light btn-large pulse modal-trigger" >Nova Encomenda</a> </div>
+                <div class="col s6" id="botaoNovo"><a href="" class="waves-effect waves-light btn-large pulse " >Novo Cliente</a></div>
                 
         </div>
             <!--parte right do card-->
@@ -67,13 +67,13 @@
                     I am convenient because I require little markup to use effectively.</h6>
                 </div>
                 <div class="col s6  ">
-                    <i class="material-symbols-outlined medium " id="iconPackage2" >
+                    <i class="material-symbols-outlined medium" id="iconPackage2" >
                         package_2
                     </i>
-                    <i class="material-symbols-outlined large " id="iconPackage" >
+                    <i class="material-symbols-outlined large" id="iconPackage" >
                     package_2
                     </i>
-                    <i class="material-symbols-outlined medium" >
+                    <i class="material-symbols-outlined medium">
                         package_2
                     </i>
                 </div>
@@ -83,9 +83,9 @@
               
             </div>
           </div>
-    </div>
+        </div>
     
-    <!--<div class="row">
+      <!--<div class="row">
         
         <a class="waves-effect waves-light btn modal-trigger" href="#modal11">Modal</a>
 
@@ -103,51 +103,20 @@
     <!--estrutura de accao-->
 
     <div class="fixed-action-btn">
-        <a  class="btn-floating btn-large bg-gradient-green " href="#!">
+        <a  class="btn-floating btn-large bg-gradient-green modal-trigger" href="#create">
           <i class="large material-icons">add</i>
-        </a>   
+        </a>
       </div>
-    
-       <!-- Modal Structure -->
-       <div id="modal1" class="modal">
-        <div class="modal-content">
-          <h4><i class="material-icons">card_giftcard</i> Nova encomenda</h4>
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
-                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                <label for="first_name">First Name</label>
-              </div>
-              <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
-              </div>
-    
-              <div class="input-field col s12">
-                <select>
-                  <option value="" disabled selected>Choose your option</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                </select>
-                <label>Materialize Select</label>
-              </div>          
-    
-            </div> 
-           
-            <a href="#!" class="modal-close waves-effect waves-green btn blue right">Cadastrar</a><br>
-        </div>
-        
-      </form>
-      </div>
-      
+
+@include('site.clientes.create')
+       
         <!--a estrutura do crud-->
        
         <div class="row crud ">
             
                 <div class="row titulo ">              
                   <h1 class="left">Clientes</h1>
-                  <span class="right chip">234 clientes cadastrados</span>  
+                  <span class="right chip">{{$clientes->count()}} clientes cadastrados</span>  
                 </div>
     
                <nav class="bg-gradient-green">
@@ -164,7 +133,9 @@
         <div class="row" id="ajustarRow">
                 <div class="card z-depth-4 registros " id="tabelaCrd" >
                 <table class="striped ">
+
                     <thead>
+
                       <tr>
                         <th></th>
                         <th>ID</th>  
@@ -172,48 +143,28 @@
                           
                           <th>Sobrenome</th>
                           <th>Contacto</th>
+                          <th>Código</th>
                           
                       </tr>
                     </thead>
             
                     <tbody>
+                      @foreach($clientes as $cliente)
                       <tr>
                         <td><img src="img/package.png" class="circle "></td>
-                        <td>1</td>
-                        <td>Alberto</td>                    
-                        <td>Cintura</td>
-                        <td>857055977</td>
+                        <td>{{$cliente->id}}</td>
+                        <td>{{$cliente->nome}}</td>                    
+                        <td>{{$cliente->sobrenome}}</td>
+                        <td>{{$cliente->contacto}}</td>
+                        <td>{{$cliente->codigo}}</td>
                         <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                          <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
+                          
+                          <a href="#delete-{{$cliente->id}}" class="btn-floating waves-effect waves-light red modal-trigger "><i class="material-icons">delete</i></a></td>
                       </tr>
-                      <tr>
-                        <td><img src="img/package.png" class="circle"></td>
-                        <td>2</td>
-                        <td>Jacinto</td>                    
-                        <td>Balidy</td>
-                        <td>844088976</td>
-                        <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                          <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                      </tr>
-                      <tr>
-                        <td><img src="img/package.png" class="circle"></td>
-                        <td>3</td>
-                        <td>Ialda</td>                    
-                        <td>Sixpênce</td>
-                        <td>868798979</td>
-                        <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                          <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                      </tr>
-                      <tr>
-                        <td><img src="img/package.png" class="circle"></td>
-                        <td>4</td>
-                        <td>Henry</td>                    
-                        <td>Balidy</td>
-                        <td>833304569</td>
-                        <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                          <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                      </tr>
-                    </tbody>
+                      @include('site.clientes.delete')
+                      @endforeach
+
+                                          </tbody>
                   </table>
                 </div> 
         </div>

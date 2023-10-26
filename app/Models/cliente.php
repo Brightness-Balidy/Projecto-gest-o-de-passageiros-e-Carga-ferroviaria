@@ -11,7 +11,7 @@ class Cliente extends Model
 
 
     public function cliente(){
-
+        
         return $this->hasMany(Encomenda::class, 'cliente_id','id');
     }
 }

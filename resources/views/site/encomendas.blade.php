@@ -55,7 +55,7 @@
 <div class="row container rowCont">
     <div class="row">
         <div class="col s12">
-            <div class="card blue-grey darken-1" id="cardPannel">
+            <div class="card blue-grey bg-gradient-green darken-1" id="cardPannel">
               <div class="card-content white-text">
                 <!--parte left do card-->
                 <div class="row">
