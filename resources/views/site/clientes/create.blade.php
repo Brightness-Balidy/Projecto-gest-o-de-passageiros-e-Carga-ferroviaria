@@ -7,11 +7,11 @@
 
           <div class="input-field col s6 ">
             @csrf
-            <input  id="nome"  name="nome" type="text" class="validate">
+            <input  id="nome" name="nome" type="text" class="validate">
             <label for="nome">Nome</label>
           </div>
           <div class="input-field col s6">
-            <input id="sobrenome" type="text" class="validate">
+            <input id="sobrenome" name="sobrenome" type="text" class="validate">
             <label for="sobrenome">Sobrenome</label>
           </div>
         </div>

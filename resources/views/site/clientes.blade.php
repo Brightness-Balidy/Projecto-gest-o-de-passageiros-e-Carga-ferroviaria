@@ -156,9 +156,11 @@
                         <td>{{$cliente->nome}}</td>                    
                         <td>{{$cliente->sobrenome}}</td>
                         <td>{{$cliente->contacto}}</td>
-                        <td>{{$cliente->codigo}}</td>
+                        <td>{!! DNS1D::getBarcodeHTML("$cliente->codigo", 'UPCA',2,50) !!}
+                        p - {{$cliente->codigo}}
+                        </td>
                         <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                          
+
                           <a href="#delete-{{$cliente->id}}" class="btn-floating waves-effect waves-light red modal-trigger "><i class="material-icons">delete</i></a></td>
                       </tr>
                       @include('site.clientes.delete')
