@@ -1,4 +1,4 @@
-<div id="create" class="modal">
+<div id="create" class="modal rounded">
     <div class="modal-content bg-gradient-green">
       <h4><i class="material-icons">card_giftcard</i> Novo cliente</h4>
 

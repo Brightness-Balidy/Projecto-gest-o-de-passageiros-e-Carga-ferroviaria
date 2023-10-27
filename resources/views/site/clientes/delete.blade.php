@@ -1,11 +1,15 @@
-<div id="delete-{{$cliente->id}}" class="modal">
+
+<style>
+    .modale{
+        height:50%;
+        width: 30%;
+    }
+</style>
+<div id="delete-{{$cliente->id}}" class="modal modale">
     <div class="modal-content bg-gradient-green">
       <h4><i class="material-icons">delete</i> Tem certeza?</h4>
 
-      
-
             <p>tem certeza que deseja excluir{{$cliente->nome}}?</p>
-          
 
             <button type="submit" class="modal-close waves-effect waves-green btn bg-gradient-green right">Cancelar</a><br>
 

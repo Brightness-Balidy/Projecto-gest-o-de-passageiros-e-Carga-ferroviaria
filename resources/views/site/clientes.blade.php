@@ -103,11 +103,18 @@
     <!--estrutura de accao-->
 
     <div class="fixed-action-btn">
-        <a  class="btn-floating btn-large bg-gradient-green modal-trigger" href="#create">
+        <a id="menu" class="btn-floating btn-large bg-gradient-green modal-trigger" href="#create">
           <i class="large material-icons">add</i>
         </a>
       </div>
 
+       <!-- Tap Target Structure -->
+  <div class="tap-target" data-target="menu">
+    <div class="tap-target-content">
+      <h5>Title</h5>
+      <p>A bunch of text</p>
+    </div>
+  </div>
 @include('site.clientes.create')
        
         <!--a estrutura do crud-->
@@ -202,6 +209,11 @@
      }
     }
 </script>-->
-@endsection
+<script>
+ $(document).ready(function(){
+    $('.tap-target').tapTarget();
+  });
+</script>
 
+@endsection
 

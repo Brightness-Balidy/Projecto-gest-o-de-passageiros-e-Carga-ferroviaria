@@ -34,19 +34,19 @@
          <!--seccao de informacao sobre o sistema-->
          <div class="row container" id="first">
             <div class="col s4" >
-              <article class="bg-gradient-green card z-depth-4 ">
+              <article class="bg-gradient-green card z-depth-4 rounded">
               <i class="material-icons">paid</i>
               <p>Faturamento</p>
               <h3>R$ 123,00</h3>       
             </article>
           </div>
-            <div class="col s4"><article class="bg-gradient-blue card z-depth-4 ">
+            <div class="col s4 bg-gradient-green"><article class="bg-gradient-green card z-depth-4 rounded ">
               <i class="material-icons">face</i>
               <p>Usuários</p>
               <h3>{{$usuarios}}</h3>           
             </article>
           </div>
-          <div class="col s4 "><article class="bg-gradient-blue card z-depth-4 ">
+          <div class="col s4  "><article class="bg-gradient-blue card z-depth-4 rounded">
             <i class="material-icons">shopping_cart</i>
             <p>Pedidos este mês</p>
             <h3>0 </h3>           

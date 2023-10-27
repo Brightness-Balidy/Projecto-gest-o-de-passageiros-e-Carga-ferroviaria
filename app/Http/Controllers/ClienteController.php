@@ -47,7 +47,7 @@ class ClienteController extends Controller
 -
         $request['codigo']= $number;
         Cliente::create($request->all());
-        return redirect(route('site.clientes'));
+        return redirect(route('site.clientes'))->with('sucesso','cliente removido com sucesso!');
     }
 
     public function clienteCodigoExiste($number){
