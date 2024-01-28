@@ -95,7 +95,6 @@
         }
         #userlink{
             padding-top:80%;
-            
         }
         #estender{
             height: 60px;
@@ -104,7 +103,6 @@
         #estender0{
             height: 60px;
             margin-top: 35px;
-            
         }
         #estender1{
           height: 60px;  
@@ -140,7 +138,7 @@
 
             @auth
             <ul id="nav-mobile" class="right">
-                <li><a href="#" class="dropdown-trigger" data-target='dropdown1'> Olá {{auth()->user()->nome}} <i class="material-symbols-outlined right">expand_more</i></a></li>
+                <li><a href="#" class="dropdown-trigger" data-target='dropdown1'> Olá, {{auth()->user()->nome}} <i class="material-symbols-outlined right">expand_more</i></a></li>
             </ul>
             @else
             <ul id="nav-mobile" class="right">
@@ -160,15 +158,8 @@
             <li ><a href="{{route('admin.dashboard')}}" id="estender0"><i class="material-symbols-outlined small">box</i>Dashboard</a></li>
             <li ><a href="{{route('site.encomendas')}}" id="estender1"><i class="material-symbols-outlined small" >box</i>Encomendas</a></li>
             <li><a href="{{route('site.clientes')}}" id="estender2"><i class="material-symbols-outlined small">people</i>Clientes</a></li>
-            <li><a href="#!" id="estender2"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>
-            <li ><a href="#!" id="estender3"><i class="material-symbols-outlined small">train</i>Viagem</a></li>
-            
-            
-
-            
-
-           
-            
+            <li><a href="{{route('site.bilhetes')}}" id="estender2"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>
+            <li ><a href="{{route('site.viagem')}}" id="estender3"><i class="material-symbols-outlined small">train</i>Viagem</a></li> 
         </ul>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

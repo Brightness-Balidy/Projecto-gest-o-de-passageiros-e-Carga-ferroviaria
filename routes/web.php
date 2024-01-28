@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ViagemController;
 use App\Models\Cliente;
 use Illuminate\Support\Facades\Route;
 
@@ -45,6 +46,14 @@ Route::get('/encomendas', function (){
 Route::get('/criar',function(){
     return view('login/criarConta');
 });
+//clientes
 Route::get('/clientes',[ClienteController::class,'index'])-> name('site.clientes');
 Route::delete('site/clientes/delete/{id}',[ClienteController::class,'destroy'])->name('site.delete');
 Route::post('/post',[ClienteController::class,'store']);
+
+//bilhetes
+Route::get('/bilhetes',[BilheteController::class, 'index'])-> name('site.bilhetes');
+
+//viagens
+Route::get('/viagem',[ViagemController::class, 'index'])->name('site.viagem');
+Route::post('site/viagem/store',[ViagemController::class,'store'])->name('site.viagem.store');

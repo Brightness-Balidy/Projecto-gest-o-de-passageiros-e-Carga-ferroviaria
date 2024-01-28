@@ -10,7 +10,8 @@ class DashboardController extends Controller
 {
     public function index(){
         $usuarios= User::all()->count();
-
+        $clientes= Cliente::all()->count();
+        
         //grafico 1- clientes
         $customerData = Cliente::select([
             DB::raw('MONTH(created_at) as mes'),
@@ -30,6 +31,6 @@ class DashboardController extends Controller
         $customerMes = implode(',', $mes);
         $customerTotal = implode(',', $total);
 
-        return view('admin.dashboard', compact('usuarios','customerLabel','customerMes','customerTotal'));
+        return view('admin.dashboard', compact('usuarios','clientes','customerLabel','customerMes','customerTotal'));
     }
 }

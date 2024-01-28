@@ -66,7 +66,7 @@
       <img class="activator" src="{{$destino->imagem}}">
     </div>
     <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">{{$destino->nome}}<i class="material-icons right">more_vert</i></span>
+      <span class="card-title activator  white-text text-darken-4">{{$destino->nome}}<i class="material-icons right">more_vert</i></span>
       <p><a href="#">This is a link</a></p>
     </div>
     <div class="card-reveal">

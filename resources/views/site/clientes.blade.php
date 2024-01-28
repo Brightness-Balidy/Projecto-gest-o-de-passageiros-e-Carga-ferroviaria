@@ -158,7 +158,7 @@
                     <tbody>
                       @foreach($clientes as $cliente)
                       <tr>
-                        <td><img src="img/package.png" class="circle "></td>
+                        <td><img src="img/customer.png" class="circle "></td>
                         <td>{{$cliente->id}}</td>
                         <td>{{$cliente->nome}}</td>                    
                         <td>{{$cliente->sobrenome}}</td>

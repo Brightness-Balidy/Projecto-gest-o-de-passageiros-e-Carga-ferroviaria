@@ -15,7 +15,7 @@ class BilheteController extends Controller
     public function index()
     {
         $bilhete = bilhete::all();
-        return dd($bilhete);
+        return view('site/bilheteria');
     }
 
     /**

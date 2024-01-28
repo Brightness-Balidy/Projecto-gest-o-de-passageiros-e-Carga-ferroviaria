@@ -62,7 +62,8 @@
                     <div class="col s6">
                 <span class="card-title "><h4><b>Espaço de Criação de Encomendas</b></h4></span> 
             </div>
-                <div class="col s6" id="botaoNovo"><a href="#modal1" class="waves-effect waves-light btn-large pulse modal-trigger" >Nova Encomenda</a> </div>
+                <div class="col s6" id="botaoNovo"><a href="#modal1" class="waves-effect waves-light btn-large pulse modal-trigger">
+                  Nova Encomenda</a> </div>
                 
         </div>
             <!--parte right do card-->

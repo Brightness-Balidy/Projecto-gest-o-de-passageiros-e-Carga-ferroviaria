@@ -16,10 +16,10 @@ class ClientesSeeder extends Seeder
     public function run()
     {
         Cliente::create([
-            'nome'=> 'Alberto',
-            'sobrenome'=> 'Leao',
-            'contacto' => '838688975',
-            'codigo'=> '1124523278'
+            'nome'=> 'Shirley',
+            'sobrenome'=> 'Renguende',
+            'contacto' => '868932946',
+            'codigo'=> '1124523279'
         ]);
     }
 }

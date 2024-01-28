@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Viagen;
+use App\Models\Destino;
 use Illuminate\Http\Request;
 
 class ViagemController extends Controller
@@ -13,7 +14,8 @@ class ViagemController extends Controller
      */
     public function index()
     {
-        //
+         $destinos = Destino::all();
+        return view(('site.viagem'),compact('destinos') );
     }
 
     /**
@@ -34,8 +36,14 @@ class ViagemController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        //armazena os dados de uma viagem
+        $viagem = $request->all();
+        $viagem= Viagen::create($viagem);
+        return redirect()->route('site.viagem')->
+        with('sucesso','viagem cadastrada com sucesso');
+        }
+
+    
 
     /**
      * Display the specified resource.
@@ -45,7 +53,7 @@ class ViagemController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

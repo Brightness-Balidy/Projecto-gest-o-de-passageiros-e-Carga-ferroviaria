@@ -10,15 +10,19 @@
     
     <style>
        
-       /* #loginForm{
+       /*#loginForm{
             background-color: white;
             margin-top:20%;
             margin-left:35%;
             width:30%;
         }*/
         body{
-            background-color: rgb(5, 62, 5);
+            background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0f9b0f, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
         }
+        
         #nav1{
             background-color: #076f7c;
         }
@@ -37,12 +41,12 @@
     <!--barra de navegacao-->
     <nav id="nav1" class="navbar">
         <div id="main" class="container  ">
-            <a href="" class="navbar-brand">CFM</a>
-            <span class="navbar-text">portuguese</span>
+            <a href="" class="navbar-brand text-white">CFM</a>
+            <span class="navbar-text"></span>
         </div>
     </nav>
     <!--formulario de login-->
-    <div id="divLog2" class="col "></div>
+    <div id="divLog2" class="col "id="logform"></div>
     <div id="loginForm" class="container mt-5 ">
         <div class="row align-items-center">
             <div class="col-md-10 mx-auto col-lg-4 bg-light border rounded-3 border-info">

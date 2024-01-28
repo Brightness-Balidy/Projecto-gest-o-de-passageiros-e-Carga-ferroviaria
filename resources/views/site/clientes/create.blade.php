@@ -1,6 +1,6 @@
 <div id="create" class="modal rounded">
     <div class="modal-content bg-gradient-green">
-      <h4><i class="material-icons">card_giftcard</i> Novo cliente</h4>
+      <h4><i class="material-icons">people</i> Novo cliente</h4>
 
       <form action="/post" method="POST" class="col s12" >
         <div class="row mt-5">
@@ -26,6 +26,5 @@
       </form>
     </div>
     
-  
   </div>
   

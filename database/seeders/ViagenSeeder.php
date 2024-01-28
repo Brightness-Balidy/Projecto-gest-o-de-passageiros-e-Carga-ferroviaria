@@ -15,9 +15,9 @@ class ViagenSeeder extends Seeder
     public function run()
     {
         Viagen::create([
-            'data'=>'2023-10-29',
+            'data'=>'2023-11-01',
             'local_partida'=>'Beira',
-            'destino_id'=> '3'
+            'destino_id'=> '2'
         ]);
     }
 }
