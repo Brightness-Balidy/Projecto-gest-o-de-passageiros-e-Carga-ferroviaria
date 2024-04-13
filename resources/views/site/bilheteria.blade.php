@@ -85,7 +85,7 @@
 
     
         <div class="fixed-action-btn">
-            <a id="menu" class="btn-floating btn-large bg-gradient-green r" href="#create">
+            <a id="menu" class="btn-floating btn-large bg-gradient-green modal-trigger" href="#create">
               <i class="large material-icons">add</i>
             </a>
           </div>
@@ -97,7 +97,7 @@
           <p>A bunch of text</p>
         </div>
       </div>
-    @include('site.clientes.create')
+    @include('site.bilheteria.create')
            
             <!--a estrutura do crud-->
            
@@ -138,18 +138,19 @@
                         </thead>
                 
                         <tbody>
-                          
+                          @foreach($bilhetes as $bilhete)
                           <tr>
                             <td><img src="img/package.png" class="circle "></td>
                             <td></td>
-                            <td></td>                    
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$bilhete->cliente->nome}}</td>                    
+                            <td>{{$bilhete->cliente->sobrenome}}</td>
+                            <td>{{$bilhete->cliente->contacto}}</td>
+                            <td>{{$bilhete->cliente->codigo}}</td>
                             <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
     
                               <a href="#delete-" class="btn-floating waves-effect waves-light red  "><i class="material-icons">delete</i></a></td>
                           </tr>
+                          @endforeach
                           <!--('site.clientes.delete')-->
                          
     

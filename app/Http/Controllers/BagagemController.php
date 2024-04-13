@@ -35,7 +35,10 @@ class BagagemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //armazena os dados de bagagem 
+       /* $bagagem = $request->all();
+        $bagagem = Bagagem::create($bagagem);
+        return redirect()->route('site.encomendas')->with('sucesso','viagem cadastrada com sucesso'); //redireccionar para index de controller encomenda para que possa exibir a mensagem*/
     }
 
     /**

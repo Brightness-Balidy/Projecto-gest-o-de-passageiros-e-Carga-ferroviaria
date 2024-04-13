@@ -15,9 +15,13 @@ class Cliente extends Model
         'contacto',
         'codigo'
     ]; 
-
-    public function cliente(){
+        //former cliente, just testing
+    public function encomenda(){
 
         return $this->hasMany(Encomenda::class, 'cliente_id','id');
+    }
+    public function bilhete(){
+        
+        return $this-> hasMany(Bilhete::class, 'id_cliente','id');
     }
 }

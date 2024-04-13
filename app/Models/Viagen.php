@@ -14,6 +14,9 @@ class Viagen extends Model
         return $this->hasMany(Encomenda::class,'viagem_id', 'id');
     }
 
+    public function bilhete(){
+        return $this->hasMany(Bilhete::class, 'viagem', 'id');
+    }
     protected $fillable = [
         'data',
         'local_partida',
@@ -23,7 +26,9 @@ class Viagen extends Model
     //nome da tabela
     protected $table ='viagens';
 
-    public function user(){
+    public function destino(){
         return $this ->belongsTo(Destino::class, 'destino_id');
     }
+
+    
 }

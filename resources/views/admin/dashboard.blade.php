@@ -52,7 +52,7 @@ background: linear-gradient(122deg, rgba(222,100,13,1) 0%, rgba(245,191,51,0.936
               <article class="card z-depth-4 rounded" id="firstin">
               <i class="material-icons medium  mt-4 ml-4">paid</i>
               <p class="ml-4">Faturamento</p>
-              <h3 class="ml-4">R$ 123,00</h3>       
+              <h3 class="ml-4">MZN 123,00</h3>       
             </article>
           </div>
             <div class="col s4 bg-gradient-green">
@@ -76,14 +76,14 @@ background: linear-gradient(122deg, rgba(222,100,13,1) 0%, rgba(245,191,51,0.936
         <div class="row" id="second">
             <section class="graficos col s12 m6 rounded" >            
               <div class="grafico card z-depth-4">
-                  <h5 class="center"> Aquisição de usuários</h5>
+                  <h5 class="center"> Clientes por mês</h5>
                   <canvas id="myChart" width="400" height="200"></canvas>
               </div>           
             </section> 
             
             <section class="graficos col s12 m6 rounded">            
                 <div class="grafico card z-depth-4">
-                    <h5 class="center"> Produtos </h5>
+                    <h5 class="center"> Serviços </h5>
                 <canvas id="myChart2" width="400" height="200"></canvas> 
             </div>            
            </section>             
@@ -134,7 +134,7 @@ background: linear-gradient(122deg, rgba(222,100,13,1) 0%, rgba(245,191,51,0.936
         var myChart = new Chart(ctx, {
             type: 'pie',
             data: {
-        labels: ['Facebook','Google', 'Instagram'],
+        labels: ['Encomendas','Bagagens', 'Bilhetes'],
         datasets: [{
             label: 'Visitas',
             data: [12, 19, 3],

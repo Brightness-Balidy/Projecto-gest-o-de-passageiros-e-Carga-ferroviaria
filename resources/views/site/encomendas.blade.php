@@ -60,12 +60,22 @@
                 <!--parte left do card-->
                 <div class="row">
                     <div class="col s6">
-                <span class="card-title "><h4><b>Espaço de Criação de Encomendas</b></h4></span> 
+                <span class="card-title "><h4><b>Espaço de Criação de Bagagens e encomendas</b></h4></span> 
             </div>
-                <div class="col s6" id="botaoNovo"><a href="#modal1" class="waves-effect waves-light btn-large pulse modal-trigger">
+                <div class="col s6" id="botaoNovo"><a id="menu2" href="#bagage" class="waves-effect waves-light btn-large pulse modal-trigger">
                   Nova Encomenda</a> </div>
+
                 
         </div>
+
+          <div class="tap-target" data-target="menu2">
+            <div class="tap-target-content">
+              <h5>Title</h5>
+              <p>a bunch of text</p>
+            </div>
+          </div>
+          @include('site.bagagem.bagagem_create')
+
             <!--parte right do card-->
             <div class="row">
                 <div class="col s6">
@@ -107,11 +117,19 @@
     <!--estrutura de accao-->
 
     <div class="fixed-action-btn">
-        <a  class="btn-floating btn-large bg-gradient-green " href="#!">
+        <a id="menu" class="btn-floating btn-large bg-gradient-green modal-trigger" href="#create">
           <i class="large material-icons">add</i>
         </a>   
       </div>
-    
+      <!--Tap Target Structure-->
+      <div class="tap-target" data-target="menu">
+        <div class="tap-target-content">
+          <h5>Title</h5>
+          <p>a bunch of text</p>
+        </div>
+      </div>
+      @include('site.encomenda.create')
+
        <!-- Modal Structure -->
        <div id="modal1" class="modal">
         <div class="modal-content">

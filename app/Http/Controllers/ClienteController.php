@@ -39,12 +39,12 @@ class ClienteController extends Controller
 
        // $cliente = $request->input(['nome, sobrenome, contacto']);
         
-        //gerarndo numeros aleatorios para armazenar
+        //gerarndo numeros aleatorios para o Barcode
         $number = mt_rand(1000000000, 9999999999);
         if($this->clienteCodigoExiste($number)){
             $number = mt_rand(1000000000, 9999999999);
         }
--
+
         $request['codigo']= $number;
         Cliente::create($request->all());
         return redirect(route('site.clientes'))->with('sucesso','cliente removido com sucesso!');

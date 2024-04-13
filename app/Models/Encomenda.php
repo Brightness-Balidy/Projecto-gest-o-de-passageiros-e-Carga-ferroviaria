@@ -23,7 +23,7 @@ class Encomenda extends Model
         return $this-> belongsTo(Cliente::class, 'cliente_id');
     }
     public function viagem(){
-        return $this-> belongsTo(Viagem::class,'viagem_id');
+        return $this-> belongsTo(Viagen::class,'viagem_id');
     }
 
 }

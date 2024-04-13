@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\bilhete;
+use App\Models\Bilhete;
+use App\Models\Cliente;
+use App\Models\Destino;
+use App\Models\Viagen;
 
 class BilheteController extends Controller
 {
@@ -14,8 +17,10 @@ class BilheteController extends Controller
      */
     public function index()
     {
-        $bilhete = bilhete::all();
-        return view('site/bilheteria');
+        $bilhetes = Bilhete::with('cliente')->get();
+        $clientes = Cliente::all();
+        $viagens = Viagen::with('destino')->get();
+        return view(('site/bilheteria'),compact('bilhetes','clientes','viagens'));
     }
 
     /**
@@ -36,7 +41,10 @@ class BilheteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //armazenar os bilhetes
+        $bilhete= $request->all();
+        $bilhete= Bilhete::create($bilhete);
+        return redirect()->route('site.bilhetes');
     }
 
     /**
