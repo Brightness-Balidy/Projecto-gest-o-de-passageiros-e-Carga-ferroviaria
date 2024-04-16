@@ -12,9 +12,10 @@ class Bilhete extends Model
 
     protected $fillable = [
         'id_cliente',
-        'contacto',
+        'destino_id',
         'assento',
         'viagem'
+
     ];
 
     //entregou a chave estrangeira a bagagem
@@ -26,6 +27,7 @@ class Bilhete extends Model
     //nome da tabela
     protected $table = 'bilhetes';
 
+    //recebe chave estrangeira dw cliente
     public function cliente()
     {
         return $this->belongsTo(Cliente::class, 'id_cliente');
@@ -35,5 +37,9 @@ class Bilhete extends Model
     public function viagem()
     {
         return $this->belongsTo(Viagen::class, 'viagem');
+    }
+    //deve receber chave estrangeira de destino
+    public function destino(){
+        return $this->belongsTo(Destino::class,'destino_id');
     }
 }

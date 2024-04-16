@@ -7,21 +7,45 @@
           <div class="row mt-5">
             <div class="input-field col s6">
               @csrf
-              <input name="data_partida" class="datepicker" id="fir" type="date">
-              <label for="nome"></label>
+              <select name="nome" id="nome">
+                @foreach($clientes as $cliente)
+                <option value="{{$cliente->id}}">{{$cliente->nome}}</option>
+                @endforeach
+              </select>
+              <label for="nome">nome</label>
             </div>
-            <div class="input-field col s6 ">
-              <input name="hora_partida" class="datepicker" type="time">
-              <label for="nome"></label>
+            <div class="input-field col s6"> 
+              <input type="number" id="peso" name="peso">
+              <label for="peso">peso</label>
             </div>
-          </div>
-            <div class="input-field col s6 ">
-            <select aria-placeholder="partida" name="local_partida" id="local_partida" >
+            </div>
+            <div class="row mt-2">
+              <div class="input-field col s4 ">
+              <select name="categoria" id="categoria" >
+                @foreach($categorias as $categoria)
+                <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+                @endforeach
+              </select>
+              <label for="categoria">categoria</label>
+            </div>
+            <div class="input-field col s4 ">
+              <select name="viagem" id="viagem" >
+                @foreach($viagens as $viagem)
+                <option value="{{$viagem->id}}">{{$viagem->destino->nome}}</option>
+                @endforeach
+              </select>
+              <label for="viagem">viagem</label>
+            </div>
+              <div class="input-field col s4 ">
+                <select name="estado" id="estado" >
+                  <option value="entregue">entregue</option>
+                  <option value="pendente">pendente</option>
+                </select>
+                <label for="estado">estado</label>
+            </div>
+         </div>
             
-              <option value=""></option>
-             
-            </select>
-            </div>
+           
           <div class="input-field col s6 select2">
           <select name="destino_id" id="destino_id">
            

@@ -17,10 +17,12 @@ class BilheteController extends Controller
      */
     public function index()
     {
-        $bilhetes = Bilhete::with('cliente')->get();
+       
+        $bilhetes = Bilhete::with(['cliente','destino'])->get();
         $clientes = Cliente::all();
-        $viagens = Viagen::with('destino')->get();
-        return view(('site/bilheteria'),compact('bilhetes','clientes','viagens'));
+        $viagens= Viagen::all();
+        $destinos = Destino::all();
+        return view(('site/bilheteria'),compact('bilhetes','clientes','viagens','destinos'));
     }
 
     /**
@@ -44,7 +46,7 @@ class BilheteController extends Controller
         //armazenar os bilhetes
         $bilhete= $request->all();
         $bilhete= Bilhete::create($bilhete);
-        return redirect()->route('site.bilhetes');
+        return redirect()->route('site.encomendas');
     }
 
     /**

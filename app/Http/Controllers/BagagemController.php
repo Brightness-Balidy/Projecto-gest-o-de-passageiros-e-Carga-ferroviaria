@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use app\Models\Bagagem;
+use App\Models\Bilhete;
+use App\Models\Categoria;
+
 class BagagemController extends Controller
 {
     /*
@@ -13,8 +16,11 @@ class BagagemController extends Controller
      */
     public function index()
     {
-        return $bagagem = Bagagem::all();
-        dd($bagagem);
+        $bagagems = Bagagem::all();
+        $bilhetes = Bilhete::with('cliente')->get();
+        $categorias = Categoria::all(); 
+        return view(('site.bagagem.bagagem_create'),compact('bagagems','bilhetes','categorias'));
+        
     }
 
     /**
@@ -36,9 +42,9 @@ class BagagemController extends Controller
     public function store(Request $request)
     {
         //armazena os dados de bagagem 
-       /* $bagagem = $request->all();
+        $bagagem = $request->all();
         $bagagem = Bagagem::create($bagagem);
-        return redirect()->route('site.encomendas')->with('sucesso','viagem cadastrada com sucesso'); //redireccionar para index de controller encomenda para que possa exibir a mensagem*/
+        return redirect()->route('site.encomendas')->with('sucesso','encomenda cadastrada com sucesso'); //redireccionar para index de controller encomenda para que possa exibir a mensagem*/
     }
 
     /**

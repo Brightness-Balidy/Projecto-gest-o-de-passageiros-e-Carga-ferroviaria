@@ -10,7 +10,11 @@ class Bagagem extends Model
     use HasFactory;
 
     //adicionar o array fillable
-
+    protected $fillable = [
+        'bilhete_id',
+        'categoria_id',
+        'peso'
+    ];
     //nome da tabela 
 
     protected $table ='bagagens';

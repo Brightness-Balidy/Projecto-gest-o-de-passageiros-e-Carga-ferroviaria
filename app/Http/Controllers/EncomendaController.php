@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 use App\Models\Encomenda;
+use App\Models\Viagen;
 
 class EncomendaController extends Controller
 {
@@ -17,7 +20,10 @@ class EncomendaController extends Controller
         //return "Index";
         //$encomenda= Encomenda::all();
         //return dd($encomenda);
-        return view('site/encomendas');
+        $clientes=Cliente::all();
+        $viagens= Viagen::with('destino')->get();
+        $categorias=Categoria::all();
+        return view(('site/encomendas'),compact('clientes','viagens','categorias'));
         //return view('site/home');
     }
 
