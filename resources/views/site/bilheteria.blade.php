@@ -32,7 +32,10 @@
             margin-top: 5%; 
         
         }
-    
+        
+        #botaoR{
+          height: 60px;
+        }
         #botaoNovo{
             padding-left: 50%;
         }
@@ -61,8 +64,7 @@
                 <!--parte right do card-->
                 <div class="row">
                     <div class="col s6">
-                        <h6 class=" ">I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively.</h6>
+                        <h6 class=" ">este espaço podemos proceder a criação de bilhetes para os clientes que desejam viajar</h6>
                     </div>
                     <div class="col s6  ">
                         <i class="material-symbols-outlined medium" id="iconPackage2" >
@@ -101,9 +103,10 @@
            
             <!--a estrutura do crud-->
            
-            <div class="row crud ">
-                
-                    <div class="row titulo ">              
+            <div class="row crud">
+              <div class=" s2" id="botaoR"><a href="" class="waves-effect waves-light teal btn-small left mt-5 ">relatorio</a></div>
+
+                    <div class="row titulo ">             
                       <h1 class="left">Bilhetes</h1>
                       <span class="right chip">4 bilhetes cadastrados </span>  
                     </div>
@@ -141,7 +144,9 @@
                           @foreach($bilhetes as $bilhete)
                           
                           <tr>
-                            <td><img src="img/package.png" class="circle "></td>
+                            <td><i class="material-symbols-outlined medium " id="iconPackage2" >
+                              receipt
+                          </i></td>
                             <td>{{$bilhete->id}}</td>
                             <td>{{$bilhete->cliente->nome}}</td>                    
                             <td>{{$bilhete->cliente->sobrenome}}</td>
@@ -150,6 +155,8 @@
                             <td>{{$bilhete->destino->preco}}mt</td>
                            
                             <td>
+                              <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
+
                               <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
     
                               <a href="#delete-" class="btn-floating waves-effect waves-light red  "><i class="material-icons">delete</i></a></td>

@@ -1,6 +1,11 @@
+
+<style>
+  #create{
+    height: 53%;
+  }
+</style>
 <div id="create" class="modal rounded">
-  <style> 
-  </style> 
+   
   <div class="modal-content bg-gradient-green">
       <h4><i class="material-icons">people</i> Nova viagem</h4>
 
@@ -9,11 +14,11 @@
           <div class="input-field col s6">
             @csrf
             <input name="data_partida" class="datepicker" id="fir" type="date">
-            <label for="nome"></label>
+            <label for="data_partida">data partida</label>
           </div>
           <div class="input-field col s6 ">
             <input name="hora_partida" class="datepicker" type="time">
-            <label for="nome"></label>
+            <label for="hora"> hora partida </label>
           </div>
         </div>
           <div class="input-field col s6 ">
@@ -22,6 +27,7 @@
             <option value="{{$destino->id}}">{{$destino->nome}}</option>
             @endforeach
           </select>
+          <label for="local_partida">local partida</label>
           </div>
         <div class="input-field col s6 select2">
         <select name="destino_id" id="destino_id">
@@ -29,6 +35,7 @@
           <option value="{{$destino->id}}">{{$destino->nome}}</option>
           @endforeach
         </select>
+          <label for="destino">destino</label>
         </div>
        
          

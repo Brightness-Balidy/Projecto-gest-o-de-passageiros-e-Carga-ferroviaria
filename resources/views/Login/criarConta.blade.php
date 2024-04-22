@@ -17,10 +17,13 @@
             width:30%;
         }*/
         body{
-            background-color: green;
+            /*background-color: green;*/
+            background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0f9b0f, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
         #nav1{
-            background-color: #EBEBBA;
+            background-color: #076f7c;
         }
         #linha-vertical{
             width:20px;
@@ -40,16 +43,16 @@
     <!--barra de navegacao-->
     <nav id="nav1" class="navbar">
         <div id="main" class="container  ">
-            <a href="" class="navbar-brand">CFM</a>
-            <span class="navbar-text">portuguese</span>
+            <a href="" class="navbar-brand text-white">CFM</a>
+            
         </div>
     </nav>
     <!--formulario de login-->
     <div id="divLog2" class="col "></div>
     <div id="loginForm" class="container mt-1 ">
         <div class="row align-items-center">
-            <div class="col-md-10 mx-auto col-lg-4 bg-light border rounded-3 border-info" id="logdiv">
-                <h3 class="text-center mt-2">Criar Conta</h3>
+            <div class="col-md-10 mx-auto col-lg-4 white border rounded-3 border-info" id="logdiv">
+                <h3 class="text-center mt-2 text-white">Criar Conta</h3>
 
                 <!---listar todos os erros que ocorrerem e exibir-->
                 @if ($errors->any())
@@ -69,18 +72,19 @@
                     </div>
                         <div class="form-floating mb-3 mt-2">
                           <input type="email" name="email" class="form-control" id="inputPassword" placeholder="email">
-                          <label for="inputPassword">Email</label>
+                          <label for="inputPassword">nome de usuário</label>
                     </div>
                         <div class="form-floating mb-3 mt-2">
                             <input type="password" name="password" class="form-control" id="inputPassword" placeholder="password">
-                            <label for="inputPassword">Password</label>
+                            <label for="inputPassword"> palavra-passe</label>
                         </div>
-                        <p>
-                            <small class="text-muted">
-                                <a href="">esqueci-me da senha</a>
-                            </small>
-                        <p>
-                        <button type="submit" class="btn btn-primary btn-lg mt-3">Entrar</button>
+                        <div class="form-floating mb-3 mt-2">
+                            <input type="password" name="password" class="form-control" id="inputPassword" placeholder="password">
+                            <label for="inputPassword">repetir palavra-passe</label>
+                        </div>
+                        
+                        
+                        <button type="submit" class="btn btn-primary btn-lg mt-3">submeter</button>
                     </div>
                 </form>
             </div>

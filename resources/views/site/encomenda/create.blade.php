@@ -1,7 +1,13 @@
+
+<style>
+  #create{
+    height: 55%;
+  }
+</style>
 <div id="create" class="modal rounded">
    
     <div class="modal-content bg-gradient-green">
-        <h4><i class="material-icons">people</i> Nova viagem</h4>
+        <h4><i class="material-symbols-outlined medium">package_2</i> Nova Encomenda</h4>
   
         <form action="" method="POST" class="col s12" >
           <div class="row mt-5">
@@ -23,7 +29,7 @@
               <div class="input-field col s4 ">
               <select name="categoria" id="categoria" >
                 @foreach($categorias as $categoria)
-                <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+                <option value="{{$categoria->id}}">{{$categoria->tipo}}</option>
                 @endforeach
               </select>
               <label for="categoria">categoria</label>
@@ -37,9 +43,10 @@
               <label for="viagem">viagem</label>
             </div>
               <div class="input-field col s4 ">
-                <select name="estado" id="estado" >
+                <select name="estado" id="estado" disabled>
                   <option value="entregue">entregue</option>
-                  <option value="pendente">pendente</option>
+                  <option value="pendente">em curso</option>
+                  
                 </select>
                 <label for="estado">estado</label>
             </div>
@@ -47,11 +54,12 @@
             
            
           <div class="input-field col s6 select2">
-          <select name="destino_id" id="destino_id">
+          <select name="contacto" id="contacto">
            
-            <option value=""></option>
+            <option value="">857055975</option>
          
           </select>
+          <label for="contacto consignatário">contacto consignatário</label>
           </div>
          
            

@@ -14,6 +14,9 @@ class CategoriasSeeder extends Seeder
      */
     public function run()
     {
-        categoria::factory(5)->create();
+        Categoria::create([
+            'tipo'=> 'fragil',
+            'descricao'=> 'artigos que quebram com facilidade, como vidro'
+        ]);
     }
 }

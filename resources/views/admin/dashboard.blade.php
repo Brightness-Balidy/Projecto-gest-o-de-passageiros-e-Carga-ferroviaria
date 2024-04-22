@@ -71,9 +71,9 @@ background: linear-gradient(122deg, rgba(222,100,13,1) 0%, rgba(245,191,51,0.936
         </div>
           </div>
         
-    
+            
 
-        <div class="row" id="second">
+        <div class="row" id="second" >
             <section class="graficos col s12 m6 rounded" >            
               <div class="grafico card z-depth-4">
                   <h5 class="center"> Clientes por mês</h5>
@@ -89,7 +89,7 @@ background: linear-gradient(122deg, rgba(222,100,13,1) 0%, rgba(245,191,51,0.936
            </section>             
         </div>    
 
-
+        <div class=" left s2" id="botaoR"><a href="" class="waves-effect waves-light teal btn-small">relatorio</a></div>
         </div>
         @endsection 
         @push('graficos')

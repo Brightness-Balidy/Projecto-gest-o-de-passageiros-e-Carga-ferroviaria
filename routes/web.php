@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\BagagemController;
+use App\Http\Controllers\BagagenController;
 use App\Http\Controllers\BilheteController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DashboardController;
@@ -68,4 +68,5 @@ Route::post('site/viagem/store',[ViagemController::class,'store'])->name('site.v
 
 //bagagens
 Route::get('/encomendas',[EncomendaController::class,'index'])->name('site.encomendas');
-Route::post('site/bagagem/store',[BagagemController::class,'store'])->name('site.bagagem.store');
+
+Route::get('site/bagagen/store',[BagagenController::class,'index'])->name('site.bagagen.store');

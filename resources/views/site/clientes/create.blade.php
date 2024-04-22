@@ -1,4 +1,13 @@
+
+<style>
+  #create{
+    height: 50%;
+  }
+</style>
 <div id="create" class="modal rounded">
+
+
+
     <div class="modal-content bg-gradient-green">
       <h4><i class="material-icons">people</i> Novo cliente</h4>
 

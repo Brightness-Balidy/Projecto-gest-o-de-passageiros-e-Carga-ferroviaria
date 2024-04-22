@@ -61,19 +61,18 @@
     <div class="row">
 
       @foreach ($destinos as $destino)
-          
     <div class="col s4">
-    <div class="card bg-dark">
+    <div class="card teal">
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" src="">
       </div>
       <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
-        <p><a href="#">{{$destino->nome}}</a> {{$destino->distancia}}KM</p>
+        <span class="card-title activator white-text  green"><i class="material-icons right">more_vert</i></span>
+        <p class="white-text"><a class="text-white" href="#">{{$destino->nome}}</a> {{$destino->distancia}}KM</p>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        <p>Preço: {{$destino->preco}}mt</p>
       </div>
     </div>
   </div>
@@ -99,13 +98,13 @@
             </div>
             <div class="col s6">
                 <i class="material-symbols-outlined medium " id="iconPackage2" >
-                    person
+                    train
                 </i>
                 <i class="material-symbols-outlined large " id="iconPackage" >
-                person
+                train
                 </i>
                 <i class="material-symbols-outlined medium">
-                    person
+                    train
                 </i>
             </div>
             

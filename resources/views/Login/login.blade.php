@@ -26,14 +26,19 @@ background: linear-gradient(to right, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, F
         #nav1{
             background-color: #076f7c;
         }
-        #linha-vertical{
-            width:20px;
-            height: 30px;
-            background-color: red;
-        }
+        
         #divLog2{
             height: 50px;
             width: 100%;
+        }
+        #lformlog{
+            width: 80%;
+        }
+        #texto{
+            color: white;
+        }
+        p{
+            color: white;
         }
     </style>
 </head>
@@ -46,11 +51,11 @@ background: linear-gradient(to right, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, F
         </div>
     </nav>
     <!--formulario de login-->
-    <div id="divLog2" class="col "id="logform"></div>
+    <div id="divLog2" class="col  "id="logform"></div>
     <div id="loginForm" class="container mt-5 ">
         <div class="row align-items-center">
-            <div class="col-md-10 mx-auto col-lg-4 bg-light border rounded-3 border-info">
-                <h3 class="text-center mt-2">Login</h3>
+            <div class="col-md-10 mx-auto col-lg-4 white border rounded-3 border-info" id="formlog">
+                <h3 id="texto" class="text-center mt-2">Início de Sessão</h3>
 
                 <!--caso ocorra algum erro exibimos a mensagem na tela-->
                 @if ($mensagem = Session::get('erro'))
@@ -67,16 +72,17 @@ background: linear-gradient(to right, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, F
                     
                     <div class="form-floating mb-3 mt-4">
                         @csrf
-                        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="email">
-                        <label for="inputEmail">Email</label>
+                        <input type="email" name="email" class="form-control" id="inputEmail" placeholder="nome de usuário">
+                        <label for="inputEmail">nome de usuário</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="password">
-                        <label for="inputPassword">Password</label>
-                        <input type="checkbox" name="remember"> lembrar-me
+                        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="palavra-passe">
+                        <label for="inputPassword">Palavra-passe</label>
+                        
+                        <input type="checkbox" name="remember">lembrar-me 
                         <p>
                             <small class="text-muted">
-                                <a href="">esqueci-me da senha</a>
+                                <a href="">criar conta</a>
                             </small>
                         <p>
                         <button type="submit" class="btn btn-primary btn-lg mt-3">Entrar</button>

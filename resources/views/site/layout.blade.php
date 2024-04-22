@@ -124,7 +124,7 @@
     <!--Data target do dropdown-->
     <!--not working-->
     <ul id='dropdown1' class='dropdown-content'>
-        <li><a href="{{route('login.logout')}}">Log out</a></li>
+        <li><a href="{{route('login.logout')}}">terminar sessão</a></li>
    </ul>
 
     <!--navbar principal-->
@@ -139,6 +139,7 @@
             @auth
             <ul id="nav-mobile" class="right">
                 <li><a href="#" class="dropdown-trigger" data-target='dropdown1'> Olá, {{auth()->user()->nome}} <i class="material-symbols-outlined right">expand_more</i></a></li>
+                
             </ul>
             @else
             <ul id="nav-mobile" class="right">
@@ -155,7 +156,7 @@
         <ul id="slide-out" class="sidenav sidenav-fixed teal lightgreen-2">
             
             <li><a href="#" class="brand-logo center links " id="estender"><h4>CFM</h4></a></li>
-            <li ><a href="{{route('admin.dashboard')}}" id="estender0"><i class="material-symbols-outlined small">box</i>Dashboard</a></li>
+            <li ><a href="{{route('admin.dashboard')}}" id="estender0"><i class="material-symbols-outlined small">dashboard</i>Dashboard</a></li>
             <li ><a href="{{route('site.encomendas')}}" id="estender1"><i class="material-symbols-outlined small" >box</i>Encomendas</a></li>
             <li><a href="{{route('site.clientes')}}" id="estender2"><i class="material-symbols-outlined small">people</i>Clientes</a></li>
             <li><a href="{{route('site.bilhetes')}}" id="estender2"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>

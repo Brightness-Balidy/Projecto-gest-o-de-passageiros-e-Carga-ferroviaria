@@ -63,18 +63,17 @@
             <!--parte right do card-->
             <div class="row">
                 <div class="col s6">
-                    <h6 class=" ">I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</h6>
+                    <h6 class=" ">Este é o espaço de criação de clientes, para poder prestar os Serviços, é uma condição importante cadastrar os clientes</h6>
                 </div>
                 <div class="col s6  ">
                     <i class="material-symbols-outlined medium" id="iconPackage2" >
-                        package_2
+                        people
                     </i>
                     <i class="material-symbols-outlined large" id="iconPackage" >
-                    package_2
+                    people
                     </i>
                     <i class="material-symbols-outlined medium">
-                        package_2
+                        people
                     </i>
                 </div>
                 
@@ -158,7 +157,7 @@
                     <tbody>
                       @foreach($clientes as $cliente)
                       <tr>
-                        <td><img src="img/customer.png" class="circle "></td>
+                        <td><a class="btn-floating waves-effect waves-light blue"><i class="material-icons ">account_circle</i></a></td>
                         <td>{{$cliente->id}}</td>
                         <td>{{$cliente->nome}}</td>                    
                         <td>{{$cliente->sobrenome}}</td>
@@ -166,7 +165,9 @@
                         <td>{!! DNS1D::getBarcodeHTML("$cliente->codigo", 'UPCA',2,50) !!}
                         p - {{$cliente->codigo}}
                         </td>
-                        <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
+                        <td>
+                          <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
+                          <a class="btn-floating  waves-effect waves-light orange "><i class="material-icons">mode_edit</i></a>
 
                           <a href="#delete-{{$cliente->id}}" class="btn-floating waves-effect waves-light red modal-trigger "><i class="material-icons">delete</i></a></td>
                       </tr>

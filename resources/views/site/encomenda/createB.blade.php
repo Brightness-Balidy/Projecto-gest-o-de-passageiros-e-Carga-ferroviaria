@@ -1,36 +1,41 @@
-<div id="bagage" class="modal rounded">
-    <style>
-     
+<style>
+    #createB{
+        height: 55%;
+    }
+</style>
+<div id="createB" class="modal rounded">
    
-    </style> 
     <div class="modal-content bg-gradient-green">
-        <h4 bg-warning><i class="material-icons">people</i>Nova bagagem</h4>
+        <h4><i class="material-symbols-outlined medium">package_2</i> Nova bagagem</h4>
   
-        <form action="{{route('site.bagagem.store')}}" method="POST" class="col s12" >
+        <form action="" method="POST" class="col s12" >
           <div class="row mt-5">
             <div class="input-field col s6">
               @csrf
-              <select name="bilhete" class="validate" id="bilhete">
+              <select name="bilhete" id="nome">
                 @foreach($bilhetes as $bilhete)
                 <option value="{{$bilhete->id}}">{{$bilhete->cliente->nome}}</option>
                 @endforeach
               </select>
-              <label for="bilhete">bilhete</label>
+              <label for="nome">nome</label>
             </div>
-            <div class="input-field col s6 ">
-              <select name="categoria" id="categoria">
+            </div>
+            <div class="row mt-2">
+              <div class="input-field col s4 ">
+              <select name="categoria" id="categoria" >
                 @foreach($categorias as $categoria)
-                <option value="categoria">Generos frescos</option>
+                <option value="{{$categoria->id}}">{{$categoria->tipo}}</option>
                 @endforeach
               </select>
-              <label for="categoria">Categoria</label>
+              <label for="categoria">categoria</label>
             </div>
-          </div>
-            <div class="input-field col s6 ">
-            <input id="peso" name="peso" class="validate" type="number">
-            <label for="peso">peso</label>
+            <div class="input-field col s4 ">
+              <input type="number" name="peso" id="peso">
+              <label for="peso">peso</label>
             </div>
-          
+              
+         </div>
+            
            
           <button type="submit" class="modal-close waves-effect waves-green btn bg-gradient-green right">Cadastrar</a><br>
         </form>

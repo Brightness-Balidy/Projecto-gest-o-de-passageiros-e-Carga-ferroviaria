@@ -62,8 +62,8 @@
                     <div class="col s6">
                 <span class="card-title "><h4><b>Espaço de Criação de Bagagens e encomendas</b></h4></span> 
             </div>
-                <div class="col s6" id="botaoNovo"><a id="menu2" href="#bagage" class="waves-effect waves-light btn-large pulse modal-trigger">
-                  Nova Encomenda</a> </div>
+                <div class="col s6" id="botaoNovo"><a id="menu2" href="#createB" class="waves-effect waves-light btn-large pulse modal-trigger">
+                  Bagagem </a> </div>
 
                 
         </div>
@@ -74,13 +74,13 @@
               <p>a bunch of text</p>
             </div>
           </div>
-          @include('site.bagagem.bagagem_create')
+          @include('site.encomenda.createB')
 
             <!--parte right do card-->
             <div class="row">
                 <div class="col s6">
-                    <h6 class=" ">I am a very simple card. I am good at containing small bits of information.
-                    I am convenient because I require little markup to use effectively.</h6>
+                    <h6 class=" ">este é o espaço de criação de encomendas, adicionalmente pode criar-se bagagens acompanhadas. Para criar bagagem acompanhada clique no botão ao lado deste card, para criar encomenda clique no botão circular no canto inferior.
+                    </h6>
                 </div>
                 <div class="col s6  ">
                     <i class="material-symbols-outlined medium " id="iconPackage2" >
@@ -166,8 +166,11 @@
         <!--a estrutura do crud-->
        
         <div class="row crud ">
-            
-                <div class="row titulo ">              
+
+          <div class=" s2" id="botaoR"><a href="" class="waves-effect waves-light teal btn-small left mt-5 ">relatorio</a></div>
+          <div class=" s2 ml-2 " id="botaoR"><a href="" class="waves-effect waves-light btn-small left mt-5 blue"><i class="material-icons small">message</i></a></div>
+
+                <div class="row titulo  ">              
                   <h1 class="left">Encomendas</h1>
                   <span class="right chip">4 encomendas cadastradas</span>  
                 </div>
@@ -202,42 +205,52 @@
                     <tbody>
                       <tr>
                         <td><img src="img/package.png" class="circle "></td>
-                        <td>#123</td>
+                        <td>1</td>
                         <td>12.00kg</td>                    
                         <td>Alberto</td>
                         <td>Eletrônicos</td>
                         <td>120mt</td>
-                        <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
+                        <td>
+                          <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
+                          <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
                           <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
                       </tr>
                       <tr>
                         <td><img src="img/package.png" class="circle"></td>
-                        <td>#123</td>
-                        <td>5.00kg</td>                    
+                        <td>2</td>
+                        <td>5.00 kg</td>                    
                         <td>Jacinto</td>
                         <td>Generos frescos</td>
-                        <td>200mt</td>
-                        <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
+                        <td>200 mt</td>
+                        <td>
+                          <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
+                          <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
                           <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
                       </tr>
                       <tr>
                         <td><img src="img/package.png" class="circle"></td>
-                        <td>#123</td>
-                        <td>10.00kg</td>                    
+                        <td>3</td>
+                        <td>10.00 kg</td>                    
                         <td>Ialda</td>
                         <td>Eletrônicos</td>
-                        <td>300</td>
-                        <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
+                        <td>300 mt</td>
+                        <td>
+                          <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
+                          <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
                           <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
                       </tr>
                       <tr>
                         <td><img src="img/package.png" class="circle"></td>
-                        <td>#123</td>
-                        <td>9kg</td>                    
+                        <td>4</td>
+                        <td>9 kg</td>                    
                         <td>Henry</td>
                         <td>Eletrônicos</td>
-                        <td>600mt</td>
-                        <td><a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
+                        <td>600 mt</td>
+                        <td>
+                          <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
+
+                          <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
+                          
                           <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
                       </tr>
                     </tbody>

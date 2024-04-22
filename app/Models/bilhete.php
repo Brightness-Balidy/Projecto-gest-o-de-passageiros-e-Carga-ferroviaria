@@ -18,14 +18,10 @@ class Bilhete extends Model
 
     ];
 
-    //entregou a chave estrangeira a bagagem
-    public function bilhete()
-    {
-        return $this->hasMany(Bagagem::class, 'bagagem_id', 'id');
-    }
+    
 
     //nome da tabela
-    protected $table = 'bilhetes';
+    protected $table= 'bilhetes';
 
     //recebe chave estrangeira dw cliente
     public function cliente()
@@ -42,4 +38,10 @@ class Bilhete extends Model
     public function destino(){
         return $this->belongsTo(Destino::class,'destino_id');
     }
+
+    //entregou a chave estrangeira a bagagem
+    public function bagagen(){
+        return $this->hasMany(Bagagen::class, 'bilhete_id', 'id');
+    }
+ 
 }

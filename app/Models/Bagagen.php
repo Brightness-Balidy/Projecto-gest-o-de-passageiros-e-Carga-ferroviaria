@@ -5,26 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bagagem extends Model
+class Bagagen extends Model
 {
     use HasFactory;
 
-    //adicionar o array fillable
-    protected $fillable = [
-        'bilhete_id',
-        'categoria_id',
-        'peso'
-    ];
-    //nome da tabela 
+    //nome da tabela
+    protected $table='bagagens';
 
-    protected $table ='bagagens';
-
-    public function bilhetes()
-    {
+    //recebe chave estrangeira de bilhetes
+    public function bilhete(){
         return $this->belongsTo(Bilhete::class, 'bilhete_id');
     }
 
-    public function categorias(){
+    //recebe chave estrangeira de categoria
+    public function categoria(){
         return $this->belongsTo(Categoria::class, 'categoria_id');
     }
 }

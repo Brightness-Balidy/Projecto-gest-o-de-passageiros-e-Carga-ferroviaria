@@ -1,7 +1,7 @@
 <style>
   #create{
-    width: 70%;
-    height: 100%;
+    width: 50%;
+    height: 60%;
   }
 </style>
 <div id="create" class="modal rounded">

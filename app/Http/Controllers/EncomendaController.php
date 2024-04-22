@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bilhete;
 use App\Models\Categoria;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
@@ -23,7 +24,8 @@ class EncomendaController extends Controller
         $clientes=Cliente::all();
         $viagens= Viagen::with('destino')->get();
         $categorias=Categoria::all();
-        return view(('site/encomendas'),compact('clientes','viagens','categorias'));
+        $bilhetes= Bilhete::all();
+        return view(('site/encomendas'),compact('clientes','viagens','categorias','bilhetes'));
         //return view('site/home');
     }
 
