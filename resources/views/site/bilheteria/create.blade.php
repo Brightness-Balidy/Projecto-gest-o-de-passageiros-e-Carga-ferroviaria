@@ -6,11 +6,9 @@
 </style>
 <div id="create" class="modal rounded">
 
-
     <div class="modal-content bg-gradient-green">
       <h4 ><i class="material-icons">local_activity</i> Novo bilhete</h4>
-
-      <form action="{{route('site.bilhetes.store')}}" method="POST" class="col s12" >
+      <form action="{{route('site.bilhetes.store')}}" method="POST" class="col s12">
         <div class="row mt-5">
           <div class="input-field col s4 ">
             @csrf
@@ -45,18 +43,13 @@
               <option value="2">2ª Classe</option>
               <option value="3">3ª Classe</option>
             </select>
-            <label for="classe">Classe
+            <label for="classe">Carruagem
             </label>
           </div>
         </div>
 
         <div class="row mt-2">
-          <div class="input-form col s4">
-            <label for="assento">assento</label>
-            <input type="number" id="assento" name="assento">
-          
-          </div>
-      
+         
         <div class="col 4">
           <div class="row">
           <p>

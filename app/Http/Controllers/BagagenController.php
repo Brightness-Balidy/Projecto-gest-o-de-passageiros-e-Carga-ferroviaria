@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bagagen;
 use App\Models\Bilhete;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
@@ -40,7 +41,9 @@ class BagagenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bagagem = $request->all();
+        $bagagem = Bagagen::create($bagagem);
+        return redirect()->route('site.encomendas'); 
     }
 
     /**

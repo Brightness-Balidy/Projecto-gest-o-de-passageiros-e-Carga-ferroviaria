@@ -9,17 +9,13 @@ class Bilhete extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
         'id_cliente',
         'destino_id',
-        'assento',
-        'viagem'
-
+        'viagem',
     ];
 
     
-
     //nome da tabela
     protected $table= 'bilhetes';
 

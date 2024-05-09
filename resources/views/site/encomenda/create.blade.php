@@ -1,7 +1,7 @@
 
 <style>
   #create{
-    height: 55%;
+    height: 70%;
   }
 </style>
 <div id="create" class="modal rounded">
@@ -55,9 +55,7 @@
            
           <div class="input-field col s6 select2">
           <select name="contacto" id="contacto">
-           
-            <option value="">857055975</option>
-         
+            <option value="contacto">857055975</option>
           </select>
           <label for="contacto consignatário">contacto consignatário</label>
           </div>

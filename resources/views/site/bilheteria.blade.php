@@ -113,29 +113,30 @@
         
                    <nav class="bg-gradient-green">
                     <div class="nav-wrapper">
-                      <form>
+                      <form method="" action="">
                         <div class="input-field">
                           <input placeholder="Pesquisar..." id="search" type="search" required>
                           <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                           <i class="material-icons">close</i>
                         </div>
+                        <button type="submit">Pesquisar</button>
                       </form>
                     </div>
                   </nav>     
             <div class="row" id="ajustarRow">
                     <div class="card z-depth-4 registros " id="tabelaCrd" >
-                    <table class="striped ">
+                    <table class="table table-hover">
     
                         <thead>
     
                           <tr>
-                            <th></th>
-                            <th>ID</th>  
-                            <th>Nome</th>
+                            <th scope="col"></th>
+                            <th scope="col">ID</th>  
+                            <th scope="col">Nome</th>
                               
-                              <th>Sobrenome</th>
-                              <th>Destino</th>
-                              <th>preço</th>
+                              <th scope="col">Sobrenome</th>
+                              <th scope="col">Destino</th>
+                              <th scope="col">preço</th>
                               
                           </tr>
                         </thead>
@@ -147,7 +148,7 @@
                             <td><i class="material-symbols-outlined medium " id="iconPackage2" >
                               receipt
                           </i></td>
-                            <td>{{$bilhete->id}}</td>
+                            <th scope="row">{{$bilhete->id}}</th>
                             <td>{{$bilhete->cliente->nome}}</td>                    
                             <td>{{$bilhete->cliente->sobrenome}}</td>
                            

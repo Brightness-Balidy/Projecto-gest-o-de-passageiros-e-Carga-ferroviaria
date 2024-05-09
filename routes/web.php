@@ -57,10 +57,13 @@ Route::get('/criar',function(){
 Route::get('/clientes',[ClienteController::class,'index'])-> name('site.clientes');
 Route::delete('site/clientes/delete/{id}',[ClienteController::class,'destroy'])->name('site.delete');
 Route::post('/post',[ClienteController::class,'store']);
+Route::get('/search',[ClienteController::class,'search']);
 
 //bilhetes
 Route::get('/bilhetes',[BilheteController::class,'index'])-> name('site.bilhetes');
 Route::post('site/bilhetes/store',[BilheteController::class,'store'])-> name('site.bilhetes.store');
+
+//Route::get('/search', [BilheteController::class,'search']);
 
 //viagens
 Route::get('/viagem',[ViagemController::class,'index'])->name('site.viagem');
@@ -69,4 +72,4 @@ Route::post('site/viagem/store',[ViagemController::class,'store'])->name('site.v
 //bagagens
 Route::get('/encomendas',[EncomendaController::class,'index'])->name('site.encomendas');
 
-Route::get('site/bagagen/store',[BagagenController::class,'index'])->name('site.bagagen.store');
+Route::post('site/encomendas',[BagagenController::class,'store'])->name('site.bagagen.store');

@@ -162,17 +162,18 @@
         
       </form>
       </div>
-      
+      @include('site.sms.create')
         <!--a estrutura do crud-->
        
         <div class="row crud ">
 
           <div class=" s2" id="botaoR"><a href="" class="waves-effect waves-light teal btn-small left mt-5 ">relatorio</a></div>
-          <div class=" s2 ml-2 " id="botaoR"><a href="" class="waves-effect waves-light btn-small left mt-5 blue"><i class="material-icons small">message</i></a></div>
+          <div class=" s2 ml-2 " id="botaoR"><a href="#createSMS" class="waves-effect waves-light modal-trigger btn-small left mt-5 blue"><i class="material-icons small">message</i></a></div>
 
                 <div class="row titulo  ">              
                   <h1 class="left">Encomendas</h1>
-                  <span class="right chip">4 encomendas cadastradas</span>  
+                  <span class="right chip">
+                    4 encomendas cadastradas</span>  
                 </div>
     
                <nav class="bg-gradient-green">

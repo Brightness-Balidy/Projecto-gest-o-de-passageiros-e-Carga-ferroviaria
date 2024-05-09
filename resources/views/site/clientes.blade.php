@@ -125,17 +125,13 @@
                   <span class="right chip">{{$clientes->count()}} clientes cadastrados</span>  
                 </div>
     
-               <nav class="bg-gradient-green">
-                <div class="nav-wrapper">
-                  <form>
-                    <div class="input-field">
-                      <input placeholder="Pesquisar..." id="search" type="search" required>
-                      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                      <i class="material-icons">close</i>
-                    </div>
+                <center>
+                  <form action="/search" method="get">
+                    <input type="text" name="search">
+                    <button type="submit" >Search</button>
                   </form>
-                </div>
-              </nav>     
+                </center>
+
         <div class="row" id="ajustarRow">
                 <div class="card z-depth-4 registros " id="tabelaCrd" >
                 <table class="striped ">

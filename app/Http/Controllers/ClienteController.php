@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bilhete;
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
 {
@@ -15,9 +17,17 @@ class ClienteController extends Controller
     public function index()
     {
         $clientes = Cliente::all();
-        return view('site.clientes',compact('clientes'));
+        $bilhetes= Bilhete::all();
+        return view('site.clientes', compact('clientes','bilhetes'));
     }
 
+    public function search(Request $request){
+        $search= $request->input('search');
+
+        $clientes = DB::table('clientes')->where('nome', 'like', '%' . $search . '%')->get();
+
+        return view('site/clientes', compact('clientes','search'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -34,11 +44,10 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    // $cliente = $request->input(['nome, sobrenome, contacto']);
     public function store(Request $request)
     {
-
-       // $cliente = $request->input(['nome, sobrenome, contacto']);
-        
+            
         //gerarndo numeros aleatorios para o Barcode
         $number = mt_rand(1000000000, 9999999999);
         if($this->clienteCodigoExiste($number)){
@@ -47,7 +56,7 @@ class ClienteController extends Controller
 
         $request['codigo']= $number;
         Cliente::create($request->all());
-        return redirect(route('site.clientes'))->with('sucesso','cliente removido com sucesso!');
+        return redirect(route('site.clientes'))->with('sucesso','cliente cadastrado com sucesso!');
     }
 
     public function clienteCodigoExiste($number){

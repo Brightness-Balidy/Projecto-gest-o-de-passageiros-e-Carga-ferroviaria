@@ -25,7 +25,8 @@ class EncomendaController extends Controller
         $viagens= Viagen::with('destino')->get();
         $categorias=Categoria::all();
         $bilhetes= Bilhete::all();
-        return view(('site/encomendas'),compact('clientes','viagens','categorias','bilhetes'));
+        $encomendas= Encomenda::all();
+        return view(('site/encomendas'),compact('clientes','viagens','categorias','bilhetes','encomendas'));
         //return view('site/home');
     }
 

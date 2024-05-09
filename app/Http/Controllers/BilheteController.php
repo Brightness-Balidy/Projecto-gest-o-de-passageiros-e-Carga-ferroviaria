@@ -7,6 +7,7 @@ use App\Models\Bilhete;
 use App\Models\Cliente;
 use App\Models\Destino;
 use App\Models\Viagen;
+use Illuminate\Support\Facades\DB;
 
 class BilheteController extends Controller
 {
@@ -25,6 +26,21 @@ class BilheteController extends Controller
         return view(('site/bilheteria'),compact('bilhetes','clientes','viagens','destinos'));
     }
 
+    //metodo para procurar registros
+        public function search(Request $request){
+            /*$search = $request->input('search');
+            $clientes=Cliente::all();
+            $viagens= Viagen::all();
+            $destinos= Destino::all();
+            
+        
+        $bilhetes = DB::table('bilhetes')->where('id_cliente','like','%' . $search . '%');
+               
+                         
+           
+            return view(('site/bilheteria'),compact('bilhetes', 'search', 'clientes', 'viagens','destinos'));
+                */
+        }
     /**
      * Show the form for creating a new resource.
      *
@@ -48,6 +64,7 @@ class BilheteController extends Controller
         $bilhete= Bilhete::create($bilhete);
         return redirect()->route('site.encomendas');
     }
+
 
     /**
      * Display the specified resource.
@@ -93,4 +110,5 @@ class BilheteController extends Controller
     {
         //
     }
+    
 }
