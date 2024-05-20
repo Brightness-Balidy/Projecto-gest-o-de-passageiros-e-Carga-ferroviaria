@@ -25,7 +25,7 @@ class EncomendaController extends Controller
         $viagens= Viagen::with('destino')->get();
         $categorias=Categoria::all();
         $bilhetes= Bilhete::all();
-        $encomendas= Encomenda::all();
+        $encomendas= Encomenda::with(['cliente', 'categoria','viagem'])->get();
         return view(('site/encomendas'),compact('clientes','viagens','categorias','bilhetes','encomendas'));
         //return view('site/home');
     }
@@ -48,7 +48,9 @@ class EncomendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $encomenda = $request->all();
+        $encomenda = Encomenda::create($encomenda);
+        return redirect()->route('site.encomendas'); 
     }
 
     /**

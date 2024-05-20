@@ -15,12 +15,13 @@ class Viagen extends Model
     }
 
     public function bilhete(){
-        return $this->hasMany(Bilhete::class, 'viagem', 'id');
+        return $this->hasMany(Bilhete::class, 'viagem_id', 'id');
     }
     protected $fillable = [
         'data',
         'local_partida',
         'destino_id',
+        'preco'
     ];
 
     //nome da tabela

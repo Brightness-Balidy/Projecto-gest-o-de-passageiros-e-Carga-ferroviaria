@@ -19,29 +19,29 @@
             </select>
             <label for="nome">Nome</label>
           </div>
-          <div class="input-field col ">
+         <!-- <div class="input-field col ">
             <select aria-placeholder="" id="viagem" name="viagem">
-              @foreach($viagens as $viagem)
-                <option value="{{$viagem->id}}">{{$viagem->local_partida}}</option>
-             @endforeach
+              
+                <option value=""></option>
+        
             </select>
             <label for="partida">partida</label>
-          </div>
+          </div>-->
         </div>
         <div class="row mt-2">
           <div class="input-field col">
-            <select name="destino_id" id="destino_id">
-              @foreach($destinos as $destino)
-                <option value="{{$destino->id}}">{{$destino->nome}}</option>
+            <select name="viagem_id" id="viagem_id">
+              @foreach($viagens as $viagen)
+                <option value="{{$viagen->id}}">{{$viagen->destino->nome}}</option>
               @endforeach
             </select>
             <label for="chegada">Chegada</label>
           </div>
           <div class="input-field col ">
             <select aria-placeholder="tipo" id="tipo" name="tipo">
-              <option value="1">1ª Classe</option>
-              <option value="2">2ª Classe</option>
-              <option value="3">3ª Classe</option>
+              <option value="1ª Classe">1ª Classe</option>
+              <option value="2ª Classe">2ª Classe</option>
+              <option value="3ª Classe">3ª Classe</option>
             </select>
             <label for="classe">Carruagem
             </label>

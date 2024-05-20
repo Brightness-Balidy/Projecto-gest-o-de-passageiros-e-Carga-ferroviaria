@@ -18,28 +18,25 @@ class BilheteController extends Controller
      */
     public function index()
     {
-       
-        $bilhetes = Bilhete::with(['cliente','destino'])->get();
+        $bilhetes = Bilhete::with(['cliente','viagem'])->get();
         $clientes = Cliente::all();
-        $viagens= Viagen::all();
+        $viagens= Viagen::with('destino')->get();
         $destinos = Destino::all();
         return view(('site/bilheteria'),compact('bilhetes','clientes','viagens','destinos'));
     }
 
     //metodo para procurar registros
         public function search(Request $request){
-            /*$search = $request->input('search');
+            $search = $request->input('search');
             $clientes=Cliente::all();
             $viagens= Viagen::all();
             $destinos= Destino::all();
             
-        
         $bilhetes = DB::table('bilhetes')->where('id_cliente','like','%' . $search . '%');
                
-                         
-           
             return view(('site/bilheteria'),compact('bilhetes', 'search', 'clientes', 'viagens','destinos'));
-                */
+                
+                   
         }
     /**
      * Show the form for creating a new resource.

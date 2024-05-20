@@ -9,6 +9,16 @@ class Encomenda extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'cliente_id',
+        'usuario_id',
+        'estado',
+        'viagem_id',
+        'categoria_id',
+        'consignatario', 
+        'usuario_id'
+    ];
+
     protected $table ='encomendas';
 
     public function user(){

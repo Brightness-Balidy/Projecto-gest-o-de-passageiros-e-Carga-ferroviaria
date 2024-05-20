@@ -62,6 +62,7 @@ Route::get('/search',[ClienteController::class,'search']);
 //bilhetes
 Route::get('/bilhetes',[BilheteController::class,'index'])-> name('site.bilhetes');
 Route::post('site/bilhetes/store',[BilheteController::class,'store'])-> name('site.bilhetes.store');
+Route::get('/searchBilhetes',[BilheteController::class, 'search']);
 
 //Route::get('/search', [BilheteController::class,'search']);
 
@@ -71,5 +72,10 @@ Route::post('site/viagem/store',[ViagemController::class,'store'])->name('site.v
 
 //bagagens
 Route::get('/encomendas',[EncomendaController::class,'index'])->name('site.encomendas');
-
 Route::post('site/encomendas',[BagagenController::class,'store'])->name('site.bagagen.store');
+
+//encomendas
+Route::post('site/encomenda',[EncomendaController::class, 'store'])->name('site.encomendas.store');
+
+//SMS API
+Route::get('sendSMS', [App\Http\Controllers\TwilioSMSController::class, 'index'])->name('sendSMS');

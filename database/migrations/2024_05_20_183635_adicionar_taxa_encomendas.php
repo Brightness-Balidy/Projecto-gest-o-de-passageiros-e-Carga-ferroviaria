@@ -13,9 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('encomendas', function(Blueprint $table){
-            $table-> dropColumn('contacto_destino');
-        });     
+        //
     }
 
     /**

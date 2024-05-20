@@ -10,12 +10,13 @@
     <div class="modal-content bg-gradient-green">
       <h4><i class="material-icons">message</i> Criar notificação</h4>
 
-      <form action="/post" method="POST" class="col s12" >
+      <form action="{{route('sendSMS')}}" method="GET" class="col s12" >
         <div class="row mt-5">
-
           <div class="input-field col s6 ">
             @csrf
-            <input id="contacto" name="contacto" type="text" class="validate">
+            <select name="contacto" id="contacto">
+              <option value="+258857055975">+258857055975</option>
+            </select>
             <label for="nome">contacto</label>
           </div>
           <div class="input-field col s6">

@@ -23,9 +23,7 @@
         </div>
           <div class="input-field col s6 ">
           <select aria-placeholder="partida" name="local_partida" id="local_partida" >
-            @foreach ($destinos as $destino)
-            <option value="{{$destino->id}}">{{$destino->nome}}</option>
-            @endforeach
+            <option value="Beira">Beira</option>
           </select>
           <label for="local_partida">local partida</label>
           </div>

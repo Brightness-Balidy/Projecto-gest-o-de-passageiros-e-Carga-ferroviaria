@@ -191,6 +191,7 @@
                 <div class="card z-depth-4 registros " id="tabelaCrd" >
                 <table class="striped ">
                     <thead>
+                      
                       <tr>
                         <th></th>
                         <th>ID</th>  
@@ -199,62 +200,28 @@
                           <th>Cliente</th>
                           <th>Categoria</th>
                           <th>Taxa</th>
+                          <th>Viagem</th>
                           <th></th>
                       </tr>
                     </thead>
             
                     <tbody>
+                      @foreach ($encomendas as $encomenda)
                       <tr>
                         <td><img src="img/package.png" class="circle "></td>
-                        <td>1</td>
-                        <td>12.00kg</td>                    
-                        <td>Alberto</td>
-                        <td>Eletrônicos</td>
-                        <td>120mt</td>
+                        <td>{{$encomenda->id}}</td>
+                        <td>{{$encomenda->peso}}</td>                    
+                        <td>{{$encomenda->cliente->nome}}</td>
+                        <td>{{$encomenda->categoria->tipo}}</td>
+                        <td></td>
+                        <td>{{$encomenda->viagem->destino_id}}</td>
                         <td>
                           <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
                           <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
                           <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
                       </tr>
-                      <tr>
-                        <td><img src="img/package.png" class="circle"></td>
-                        <td>2</td>
-                        <td>5.00 kg</td>                    
-                        <td>Jacinto</td>
-                        <td>Generos frescos</td>
-                        <td>200 mt</td>
-                        <td>
-                          <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
-                          <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                          <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                      </tr>
-                      <tr>
-                        <td><img src="img/package.png" class="circle"></td>
-                        <td>3</td>
-                        <td>10.00 kg</td>                    
-                        <td>Ialda</td>
-                        <td>Eletrônicos</td>
-                        <td>300 mt</td>
-                        <td>
-                          <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
-                          <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                          <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                      </tr>
-                      <tr>
-                        <td><img src="img/package.png" class="circle"></td>
-                        <td>4</td>
-                        <td>9 kg</td>                    
-                        <td>Henry</td>
-                        <td>Eletrônicos</td>
-                        <td>600 mt</td>
-                        <td>
-                          <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
-
-                          <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                          
-                          <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
-                      </tr>
-                    </tbody>
+                      @endforeach
+                      </tbody>
                   </table>
                 </div> 
         </div>

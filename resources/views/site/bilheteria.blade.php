@@ -46,6 +46,9 @@
         #ajustarRow{
             width: 100%;
         }
+       
+       
+       
     </style>
     
     <div class="row container rowCont">
@@ -110,25 +113,32 @@
                       <h1 class="left">Bilhetes</h1>
                       <span class="right chip">4 bilhetes cadastrados </span>  
                     </div>
-        
-                   <nav class="bg-gradient-green">
-                    <div class="nav-wrapper">
-                      <form method="" action="">
-                        <div class="input-field">
-                          <input placeholder="Pesquisar..." id="search" type="search" required>
+
+                  
+                   <nav class="bg-gradient-green search1">
+                    <div class="nav-wrapper search1" >
+                      <form  action="" method="get" >
+                        <div class="col-s6">
+                        <div class="input-field bg-success">
+                          <input placeholder="Pesquisar..." id="search" class="search1" type="search" required>
                           <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                           <i class="material-icons">close</i>
                         </div>
-                        <button type="submit">Pesquisar</button>
+                        
+                        </div>
+
+                       
+                        
                       </form>
                     </div>
-                  </nav>     
+                  </nav> 
+                </div>  
+                
             <div class="row" id="ajustarRow">
                     <div class="card z-depth-4 registros " id="tabelaCrd" >
                     <table class="table table-hover">
     
                         <thead>
-    
                           <tr>
                             <th scope="col"></th>
                             <th scope="col">ID</th>  
@@ -152,8 +162,8 @@
                             <td>{{$bilhete->cliente->nome}}</td>                    
                             <td>{{$bilhete->cliente->sobrenome}}</td>
                            
-                            <td>{{$bilhete->destino->nome}}</td>
-                            <td>{{$bilhete->destino->preco}}mt</td>
+                            <td>{{$bilhete->viagem->destino_id}}</td>
+                            <td>{{$bilhete->viagem->preco}}mt</td>
                            
                             <td>
                               <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>

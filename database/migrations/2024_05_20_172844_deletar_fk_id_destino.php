@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('encomendas', function(Blueprint $table){
-            $table-> dropColumn('contacto_destino');
-        });     
+        Schema::table('bilhetes', function(Blueprint $table){
+           /* $table -> dropForeign('bilhetes_destino_id_foreign');
+            $table -> dropColumn('destino_id');*/
+            $table-> dropConstrainedForeignId('destino_id');
+        });
     }
 
     /**

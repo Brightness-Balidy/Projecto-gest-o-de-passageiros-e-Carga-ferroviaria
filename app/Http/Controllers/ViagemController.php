@@ -37,8 +37,68 @@ class ViagemController extends Controller
     public function store(Request $request)
     {
         //armazena os dados de uma viagem
-        $viagem = $request->all();
-        $viagem= Viagen::create($viagem);
+        
+         /*$kmDestino = $request['destino_id'];
+         $kmPartida = $request['local_partida'];
+         $kmFinal = $kmDestino - $kmPartida;
+         $precoFinal = (405 * $kmFinal)/335; */
+
+         //muanza
+         /*
+        if($request['local_partida'] == 1 && $request['destino_id'] == 2){
+            $request['preco']= 194 -126;
+            $request['preco']= (405 * $request['preco'])/335;
+
+        }elseif($request['local_partida']==1 && $request['destino_id']==3){
+            $request['preco']= 335 - 126;
+            $request['preco']=(405 * $request['preco'])/335;
+
+        }elseif($request['local_partida']==1 && $request['destino_id']== 4){
+            $request['preco']= 126 - 0;
+            $request['preco']= (405 * $request['preco'])/335;
+            //inhaminga
+        }elseif($request['local_partida']==2 && $request['destino_id']==1){
+            $request['preco']= 194 - 126;
+            $request['preco']= (405 * $request['preco'])/335;
+
+        }elseif($request['local_partida']==2 && $request['destino_id']==3){
+            $request['preco']=  335 - 194;
+            $request['preco']= (405 * $request['preco'])/335;
+
+        }elseif($request['local_partida']==2 && $request['destino_id']== 4){
+            $request['preco']= 194 - 0;
+            $request['preco']= (405 * $request['preco'])/335;
+
+            //marromeu 
+        }elseif($request['local_partida']==3 && $request['destino_id']== 1){
+            $request['preco']= (126 - 335)/-1;
+            $request['preco']= (405 * $request['preco'])/335;
+        }elseif($request['local_partida']==3 && $request['destino_id']==2){
+            $request['preco']= (194-335)/-1;
+            $request['preco']= (405 * $request['preco'])/335;
+        }elseif($request['local_partida']==3 && $request['destino_id']==4){
+            $request['preco']= 335-0;
+            $request['preco']= (405 * $request['preco'])/335;
+            */
+            //beira
+        if($request['local_partida']== 'Beira' && $request['destino_id']==1){
+            $request['preco']= 126-0;
+            $request['preco']= (405 * $request['preco'])/335;
+        }elseif($request['local_partida']== 'Beira' && $request['destino_id']==2){
+            $request['preco']= 194-0;
+            $request['preco']= (405 * $request['preco'])/335;
+        }elseif($request['local_partida']== 'Beira' && $request['destino_id']==3){
+            $request['preco']= 335-0;
+            $request['preco']= (405 * $request['preco'])/335;
+        }else{
+            echo 'viagem invalida';
+        }
+
+        
+       $viagem = $request->only(['local_partida','destino_id','preco']);
+        $viagem = Viagen::create($viagem);
+       // dd($viagem);
+        
         return redirect()->route('site.viagem')->
         with('sucesso','viagem cadastrada com sucesso');
         }

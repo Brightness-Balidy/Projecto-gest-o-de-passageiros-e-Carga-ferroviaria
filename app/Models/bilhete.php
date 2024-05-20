@@ -12,7 +12,8 @@ class Bilhete extends Model
     protected $fillable = [
         'id_cliente',
         'destino_id',
-        'viagem',
+        'viagem_id',
+        'tipo'
     ];
 
     
@@ -28,7 +29,7 @@ class Bilhete extends Model
     //deve receber chave estrangeira de viagem 
     public function viagem()
     {
-        return $this->belongsTo(Viagen::class, 'viagem');
+        return $this->belongsTo(Viagen::class, 'viagem_id');
     }
     //deve receber chave estrangeira de destino
     public function destino(){

@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('encomendas', function(Blueprint $table){
-            $table-> dropColumn('contacto_destino');
-        });     
+        Schema::table('bilhetes', function(Blueprint $table){
+            $table-> renameColumn('viagem','viagem_id');
+        });
     }
 
     /**
