@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('encomendas', function(Blueprint $table){
-            $table-> double('taxa');
+            $table-> double('peso');
         });
     }
 

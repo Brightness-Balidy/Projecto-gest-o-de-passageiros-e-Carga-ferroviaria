@@ -21,6 +21,8 @@ class Viagen extends Model
         'data',
         'local_partida',
         'destino_id',
+        'data_partida',
+        'hora_partida',
         'preco'
     ];
 

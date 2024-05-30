@@ -120,7 +120,7 @@
         }
     </style>
 </head>
-<body class="bg-dark">
+<body >
     <!--Data target do dropdown-->
     <!--not working-->
     <ul id='dropdown1' class='dropdown-content'>

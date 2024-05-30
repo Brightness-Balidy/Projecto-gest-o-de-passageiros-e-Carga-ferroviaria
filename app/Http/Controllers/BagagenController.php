@@ -18,9 +18,10 @@ class BagagenController extends Controller
     {
       
         $categorias = Categoria::all();
-        $bilhetes= Bilhete::with('clientes')->get();
+        $bilhetes = Bilhete::with('clientes')->get();
+        $bagagens = Bagagen::all();
         return         
-        view(('site/encomendas'),compact('hello','categorias','bilhetes'));
+        view(('site/encomendas'),compact('hello','categorias','bilhetes','bagagens'));
     }
 
     /**

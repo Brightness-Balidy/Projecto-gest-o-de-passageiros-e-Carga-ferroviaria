@@ -21,10 +21,13 @@
           </div>
           <div class="input-field col s6">
             
+                
             <select name="expedidor" id="expedidor">
-              <option value="Alberto">Alberto</option>
-              <option value="Ialda">Ialda</option>
+              @foreach ($encomendas as $encomenda)
+              <option value="{{$encomenda->id}}">{{$encomenda->cliente->nome}}</option>
+              @endforeach
             </select>
+            
             <label for="sobrenome">encomenda</label>
           </div>
         </div>

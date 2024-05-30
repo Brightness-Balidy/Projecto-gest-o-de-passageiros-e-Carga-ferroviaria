@@ -16,7 +16,9 @@ class Encomenda extends Model
         'viagem_id',
         'categoria_id',
         'consignatario', 
-        'usuario_id'
+        'usuario_id',
+        'taxa',
+        'peso'
     ];
 
     protected $table ='encomendas';

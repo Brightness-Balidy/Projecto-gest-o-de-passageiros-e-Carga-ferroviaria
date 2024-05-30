@@ -71,7 +71,9 @@ class BilheteController extends Controller
      */
     public function show($id)
     {
-        //
+        $nome= Bilhete::with('cliente','viagem')->get();
+        $bilhete = Bilhete::find($id);
+        return redirect()->route(compact('bilhete','nome'), 'site.bilhetes');
     }
 
     /**
@@ -105,7 +107,9 @@ class BilheteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bilhete = Bilhete::find($id);
+        $bilhete->delete();
+        return redirect()->route('site.bilhetes');
     }
     
 }

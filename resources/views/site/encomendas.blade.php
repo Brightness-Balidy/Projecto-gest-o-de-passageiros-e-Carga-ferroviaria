@@ -170,10 +170,10 @@
           <div class=" s2" id="botaoR"><a href="" class="waves-effect waves-light teal btn-small left mt-5 ">relatorio</a></div>
           <div class=" s2 ml-2 " id="botaoR"><a href="#createSMS" class="waves-effect waves-light modal-trigger btn-small left mt-5 blue"><i class="material-icons small">message</i></a></div>
 
-                <div class="row titulo  ">              
-                  <h1 class="left">Encomendas</h1>
-                  <span class="right chip">
-                    4 encomendas cadastradas</span>  
+                <div class="row titulo ">              
+                  <h1 class="left"> Encomendas</h1>
+                  <span class="right chip"> 
+                    {{$encomendas->count()}} Encomendas</span>  
                 </div>
     
                <nav class="bg-gradient-green">
@@ -213,13 +213,85 @@
                         <td>{{$encomenda->peso}}</td>                    
                         <td>{{$encomenda->cliente->nome}}</td>
                         <td>{{$encomenda->categoria->tipo}}</td>
-                        <td></td>
+                        <td>{{$encomenda->taxa}}</td>
                         <td>{{$encomenda->viagem->destino_id}}</td>
                         <td>
-                          <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
-                          <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-                          <a class="btn-floating  waves-effect waves-light red"><i class="material-icons">delete</i></a></td>
+                          <a  href="#show-{{$encomenda->id}}" class="btn-floating waves-effect waves-light blue modal-trigger "><i class="material-icons">visibility</i></a>
+                          @can('access')
+                          <a href="#update-{{$encomenda->id}}" class="btn-floating  waves-effect waves-light orange modal-trigger"><i class="material-icons">mode_edit</i></a>
+                          <a href="#delete-{{$encomenda->id}}" class="btn-floating waves-effect waves-light red modal-trigger "><i class="material-icons">delete</i></a>
+                          @endcan
+                        </td>
                       </tr>
+                      @include('site.encomenda.delete')
+                      @include('site.encomenda.show')
+                     
+                      @endforeach
+                      </tbody>
+                  </table>
+                </div> 
+        </div>
+               <!-- <ul class="pagination center">
+                  <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                  <li class="active"><a href="#!">1</a></li>
+                  <li class="waves-effect"><a href="#!">2</a></li>
+                  <li class="waves-effect"><a href="#!">3</a></li>
+                  <li class="waves-effect"><a href="#!">4</a></li>
+                  <li class="waves-effect"><a href="#!">5</a></li>
+                  <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                </ul>  -->             
+        </div>
+
+        <div class="row crud ">
+
+          <div class=" s2" id="botaoR"><a href="" class="waves-effect waves-light teal btn-small left mt-5 ">relatorio</a></div>
+
+                <div class="row titulo">              
+                  <h1 class="left">Bagagens</h1>
+                  <span class="right chip">
+                    {{$bagagens->count()}} Bagagens</span>  
+                </div>
+    
+               <nav class="bg-gradient-green">
+                <div class="nav-wrapper">
+                  <form>
+                    <div class="input-field">
+                      <input placeholder="Pesquisar..." id="search" type="search" required>
+                      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                      <i class="material-icons">close</i>
+                    </div>
+                  </form>
+                </div>
+              </nav>     
+        <div class="row" id="ajustarRow">
+                <div class="card z-depth-4 registros " id="tabelaCrd" >
+                <table class="striped ">
+                    <thead>
+                      
+                      <tr>
+                        <th></th>
+                        <th>ID</th>  
+                        <th>bilhete</th>
+                          
+                          <th>peso</th>
+                          
+                      </tr>
+                    </thead>
+            
+                    <tbody>
+                      @foreach ($bagagens as $bagagem)
+                      <tr>
+                        <td><img src="img/package.png" class="circle "></td>
+                        <td>{{$bagagem->id}}</td>
+                        <td>{{$bagagem->bilhete_id}}</td>                    
+                        <td>{{$bagagem->peso}}</td>
+                        
+                        <td>
+                          <a href="" class="btn-floating waves-effect waves-light blue modal-trigger "><i class="material-icons">visibility</i></a>
+                          <a href="" class="btn-floating  waves-effect waves-light orange modal-trigger"><i class="material-icons">mode_edit</i></a>
+                          <a href="" class="btn-floating waves-effect waves-light red modal-trigger"><i class="material-icons">delete</i></a></td>
+                      </tr>
+  
                       @endforeach
                       </tbody>
                   </table>

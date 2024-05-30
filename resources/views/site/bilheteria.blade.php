@@ -61,7 +61,7 @@
                         <div class="col s6">
                     <span class="card-title "><h4><b>Espaço de Criação de Bilhetes</b></h4></span> 
                 </div>
-                    <div class="col s6" id="botaoNovo"><a href="" class="waves-effect waves-light btn-large pulse " >Novo Bilhete</a></div>
+                    
                     
             </div>
                 <!--parte right do card-->
@@ -111,7 +111,7 @@
 
                     <div class="row titulo ">             
                       <h1 class="left">Bilhetes</h1>
-                      <span class="right chip">4 bilhetes cadastrados </span>  
+                      <span class="right chip">{{$bilhetes->count()}} bilhetes encontrados </span>  
                     </div>
 
                   
@@ -153,7 +153,6 @@
                 
                         <tbody>
                           @foreach($bilhetes as $bilhete)
-                          
                           <tr>
                             <td><i class="material-symbols-outlined medium " id="iconPackage2" >
                               receipt
@@ -162,16 +161,18 @@
                             <td>{{$bilhete->cliente->nome}}</td>                    
                             <td>{{$bilhete->cliente->sobrenome}}</td>
                            
-                            <td>{{$bilhete->viagem->destino_id}}</td>
+                            <td>{{$bilhete->viagem->local_partida}}</td>
                             <td>{{$bilhete->viagem->preco}}mt</td>
                            
                             <td>
-                              <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
+                              <a href="#show-{{$bilhete->id}}" class="btn-floating waves-effect waves-light blue modal-trigger"><i class="material-icons">visibility</i></a>
 
                               <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
     
-                              <a href="#delete-" class="btn-floating waves-effect waves-light red  "><i class="material-icons">delete</i></a></td>
+                              <a href="#delete-{{$bilhete->id}}" class="btn-floating waves-effect waves-light red modal-trigger"><i class="material-icons">delete</i></a></td>
                           </tr>
+                          @include('site.bilheteria.delete')
+                          @include('site.bilheteria.show')
                           @endforeach
                           <!--('site.clientes.delete')-->
                          

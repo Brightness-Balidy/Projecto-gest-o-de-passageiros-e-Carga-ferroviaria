@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Models\Viagen;
 use App\Models\Destino;
@@ -82,20 +81,22 @@ class ViagemController extends Controller
             */
             //beira
         if($request['local_partida']== 'Beira' && $request['destino_id']==1){
+            $request['local_partida']= 'Beira-Muanza';
             $request['preco']= 126-0;
-            $request['preco']= (405 * $request['preco'])/335;
+            $request['preco']= ceil((405 * $request['preco'])/335);
         }elseif($request['local_partida']== 'Beira' && $request['destino_id']==2){
+            $request['local_partida']= 'Beira-Inhaminga';
             $request['preco']= 194-0;
-            $request['preco']= (405 * $request['preco'])/335;
+            $request['preco']= ceil((405 * $request['preco'])/335);
         }elseif($request['local_partida']== 'Beira' && $request['destino_id']==3){
+            $request['local_partida']= 'Beira-Marromeu';
             $request['preco']= 335-0;
-            $request['preco']= (405 * $request['preco'])/335;
+            $request['preco']= ceil((405 * $request['preco'])/335);
         }else{
             echo 'viagem invalida';
         }
 
-        
-       $viagem = $request->only(['local_partida','destino_id','preco']);
+       $viagem = $request->only(['local_partida','destino_id','preco','data_partida','hora_partida']); 
         $viagem = Viagen::create($viagem);
        // dd($viagem);
         

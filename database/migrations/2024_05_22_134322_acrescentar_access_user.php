@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('encomendas', function(Blueprint $table){
-            $table-> double('taxa');
+        Schema::table('users', function(Blueprint $table){
+            $table->string(column: 'access_level')->default(value: 'user');
         });
     }
 

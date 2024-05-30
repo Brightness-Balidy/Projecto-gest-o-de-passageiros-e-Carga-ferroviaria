@@ -52,7 +52,7 @@ background: linear-gradient(122deg, rgba(222,100,13,1) 0%, rgba(245,191,51,0.936
               <article class="card z-depth-4 rounded" id="firstin">
               <i class="material-icons medium  mt-4 ml-4">paid</i>
               <p class="ml-4">Faturamento</p>
-              <h3 class="ml-4">MZN 123,00</h3>       
+              <h3 class="ml-4">MZN 00,00</h3>       
             </article>
           </div>
             <div class="col s4 bg-gradient-green">
@@ -137,7 +137,7 @@ background: linear-gradient(122deg, rgba(222,100,13,1) 0%, rgba(245,191,51,0.936
         labels: ['Encomendas','Bagagens', 'Bilhetes'],
         datasets: [{
             label: 'Visitas',
-            data: [12, 19, 3],
+            data: [{{$encomendas}},{{$bagagens}},{{$bilhetes}}],
             backgroundColor: [
                 'rgba(255, 99, 132)',
                 'rgba(54, 162, 235)',                         

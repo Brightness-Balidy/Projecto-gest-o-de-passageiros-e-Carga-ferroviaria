@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bagagen;
 use App\Models\Bilhete;
 use App\Models\Categoria;
 use App\Models\Cliente;
@@ -25,8 +26,9 @@ class EncomendaController extends Controller
         $viagens= Viagen::with('destino')->get();
         $categorias=Categoria::all();
         $bilhetes= Bilhete::all();
+        $bagagens= Bagagen::all();
         $encomendas= Encomenda::with(['cliente', 'categoria','viagem'])->get();
-        return view(('site/encomendas'),compact('clientes','viagens','categorias','bilhetes','encomendas'));
+        return view(('site/encomendas'),compact('clientes','viagens','categorias','bilhetes','encomendas','bagagens'));
         //return view('site/home');
     }
 
@@ -48,10 +50,28 @@ class EncomendaController extends Controller
      */
     public function store(Request $request)
     {
+        if($request['categoria_id']== 4){
+            $request['taxa']= 30 * $request['peso'];
+
+        }elseif($request['categoria_id']== 5){
+            $request['taxa']= 25 * $request['peso'];
+
+        }elseif($request['categoria_id']== 6){
+            $request['taxa']= 50 * $request['peso'];
+
+        }elseif($request['categoria_id']== 7){
+            $request['taxa']= 20 * $request['peso'];
+        }else{
+            echo 'categoria inexistente';
+        }
+        
+        //dd($request->all());
+
         $encomenda = $request->all();
         $encomenda = Encomenda::create($encomenda);
         return redirect()->route('site.encomendas'); 
     }
+
 
     /**
      * Display the specified resource.
@@ -61,7 +81,10 @@ class EncomendaController extends Controller
      */
     public function show($id)
     {
-        //
+        $dados= Encomenda::with('cliente','categoria')->get();
+        $encomenda = Encomenda::find($id);
+        return redirect()->route(compact('encomenda','dados'),'site.encomendas');
+
     }
 
     /**
@@ -94,7 +117,10 @@ class EncomendaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+        $nome = Encomenda::with('cliente','categoria')->get();
+        $encomenda= Encomenda::find($id);
+        $encomenda-> delete();
+        return  redirect()->route(compact('nome'),'site.encomendas');
     }
 }

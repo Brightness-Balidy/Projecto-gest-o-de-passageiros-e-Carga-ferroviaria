@@ -71,7 +71,9 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
-        
+        $cliente= Cliente::find($id) ;
+        return redirect()->route(compact('cliente'), 'site.clientes');
+
     }
 
     /**

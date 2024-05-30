@@ -22,7 +22,7 @@ class CheckEmail
         $email = auth()->user()->email;
         $data = explode('@', $email);
         $servidorEmail = $data[1];
-
+        
         if($servidorEmail != 'gmail.com'){
             return redirect(route('login.login'));
         }

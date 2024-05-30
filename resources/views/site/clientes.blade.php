@@ -102,7 +102,7 @@
     <!--estrutura de accao-->
 
     <div class="fixed-action-btn">
-        <a id="menu" class="btn-floating btn-large bg-gradient-green modal-trigger" href="#create">
+        <a id="menu" class="btn-floating btn-large bg-gradient-green modal-trigger pulse" href="#create">
           <i class="large material-icons">add</i>
         </a>
       </div>
@@ -167,12 +167,15 @@
                         p - {{$cliente->codigo}}
                         </td>
                         <td>
-                          <a class="btn-floating waves-effect waves-light blue"><i class="material-icons">visibility</i></a>
+                          <a href="#show-{{$cliente->id}}" class="btn-floating waves-effect waves-light blue modal-trigger"><i class="material-icons">visibility</i></a>
                           <a class="btn-floating  waves-effect waves-light orange "><i class="material-icons">mode_edit</i></a>
 
+                          @can('access')
                           <a href="#delete-{{$cliente->id}}" class="btn-floating waves-effect waves-light red modal-trigger "><i class="material-icons">delete</i></a></td>
+                          @endcan
                       </tr>
                       @include('site.clientes.delete')
+                      @include('site.clientes.show')
                       @endforeach
 
                                           </tbody>
