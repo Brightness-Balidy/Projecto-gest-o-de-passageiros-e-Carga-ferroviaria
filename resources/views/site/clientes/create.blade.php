@@ -1,7 +1,8 @@
 
 <style>
   #create{
-    height: 50%;
+    height: 400px;
+    width: 35%;
   }
 </style>
 <div id="create" class="modal rounded">
@@ -36,4 +37,9 @@
     </div>
     
   </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+  <script>
+     $('#contacto').mask('(00) 000-0000');
+  </script>
   

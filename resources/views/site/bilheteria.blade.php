@@ -32,7 +32,6 @@
             margin-top: 5%; 
         
         }
-        
         #botaoR{
           height: 60px;
         }
@@ -107,14 +106,13 @@
             <!--a estrutura do crud-->
            
             <div class="row crud">
-              <div class=" s2" id="botaoR"><a href="" class="waves-effect waves-light teal btn-small left mt-5 ">relatorio</a></div>
+              <div class=" s2" id="botaoR"><a href="" class="waves-effect waves-light teal btn-small left mt-5 "><b>Relatorio</b></a></div>
 
                     <div class="row titulo ">             
                       <h1 class="left">Bilhetes</h1>
                       <span class="right chip">{{$bilhetes->count()}} bilhetes encontrados </span>  
                     </div>
 
-                  
                    <nav class="bg-gradient-green search1">
                     <div class="nav-wrapper search1" >
                       <form  action="" method="get" >
@@ -125,9 +123,7 @@
                           <i class="material-icons">close</i>
                         </div>
                         
-                        </div>
-
-                       
+                      </div>
                         
                       </form>
                     </div>
@@ -146,7 +142,7 @@
                               
                               <th scope="col">Sobrenome</th>
                               <th scope="col">Destino</th>
-                              <th scope="col">preço</th>
+                              <th scope="col">Preço</th>
                               
                           </tr>
                         </thead>
@@ -158,16 +154,16 @@
                               receipt
                           </i></td>
                             <th scope="row">{{$bilhete->id}}</th>
-                            <td>{{$bilhete->cliente->nome}}</td>                    
+                            <td>{{$bilhete->cliente->nome}}<td>                    
                             <td>{{$bilhete->cliente->sobrenome}}</td>
                            
                             <td>{{$bilhete->viagem->local_partida}}</td>
-                            <td>{{$bilhete->viagem->preco}}mt</td>
+                            <td>{{$bilhete->viagem->preco}} Mt</td>
                            
                             <td>
                               <a href="#show-{{$bilhete->id}}" class="btn-floating waves-effect waves-light blue modal-trigger"><i class="material-icons">visibility</i></a>
 
-                              <a class="btn-floating  waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
+                              <a class="btn-floating waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
     
                               <a href="#delete-{{$bilhete->id}}" class="btn-floating waves-effect waves-light red modal-trigger"><i class="material-icons">delete</i></a></td>
                           </tr>
@@ -177,7 +173,7 @@
                           <!--('site.clientes.delete')-->
                          
     
-                                              </tbody>
+                        </tbody>
                       </table>
                     </div> 
             </div>

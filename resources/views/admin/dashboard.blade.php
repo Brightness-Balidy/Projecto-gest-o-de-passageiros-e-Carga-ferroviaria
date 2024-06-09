@@ -2,7 +2,6 @@
 @section('titulo', 'Dashboard')
 @section('conteudo')
     
-   
 <style>
     .rowCont{
        /* background-color: brown;*/
@@ -45,12 +44,12 @@ background: linear-gradient(122deg, rgba(222,100,13,1) 0%, rgba(245,191,51,0.936
 
 
 
-    <div class= "row container rowCont " id="rowCont">
+    <div class= "row container rowCont" id="rowCont">
          <!--seccao de informacao sobre o sistema-->
          <div class="row container" id="first">
-            <div class="col s4" >
+            <div class="col s4">
               <article class="card z-depth-4 rounded" id="firstin">
-              <i class="material-icons medium  mt-4 ml-4">paid</i>
+              <i class="material-icons medium mt-4 ml-4">paid</i>
               <p class="ml-4">Faturamento</p>
               <h3 class="ml-4">MZN 00,00</h3>       
             </article>

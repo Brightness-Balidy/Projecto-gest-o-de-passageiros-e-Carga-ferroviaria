@@ -71,11 +71,9 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
-        $cliente= Cliente::find($id) ;
+        $cliente= Cliente::find($id);
         return redirect()->route(compact('cliente'), 'site.clientes');
-
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -86,7 +84,6 @@ class ClienteController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -96,9 +93,8 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
-
     /**
      * Remove the specified resource from storage.
      *

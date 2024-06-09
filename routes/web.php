@@ -29,6 +29,7 @@ Route::resource('users', UserController::class);
 
 Route::get('/', [SiteController::class, 'index' ]) ->name('site.index');
 Route::get('/encomendas', [SiteController::class, 'encomenda']) ->name('site.encomendas');
+Route::get('/bagagens',[SiteController::class,'encomenda'])->name('site.bagagens');
 
 //rotas de login/logout/criar conta
 Route::view('/login', 'login.login')-> name('login.login');
@@ -55,6 +56,11 @@ Route::get('/encomendas', function (){
 Route::get('/criar',function(){
     return view('login/criarConta');
 });
+
+
+//users
+Route::get('/users',[UserController::class,'index'])->name('site.users')->middleware('auth', 'checkemail');
+
 //clientes
 Route::get('/clientes',[ClienteController::class,'index'])-> name('site.clientes')->middleware('auth', 'checkemail');
 Route::delete('site/clientes/delete/{id}',[ClienteController::class,'destroy'])->name('site.delete');
@@ -78,6 +84,7 @@ Route::post('site/viagem/store',[ViagemController::class,'store'])->name('site.v
 //bagagens
 Route::get('/encomendas',[EncomendaController::class,'index'])->name('site.encomendas')-> middleware('auth', 'checkemail');
 Route::post('site/encomendas',[BagagenController::class,'store'])->name('site.bagagen.store');
+
 
 //encomendas
 Route::post('site/encomenda',[EncomendaController::class, 'store'])->name('site.encomendas.store');

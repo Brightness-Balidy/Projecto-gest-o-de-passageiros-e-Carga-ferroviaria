@@ -1,5 +1,5 @@
 @extends('site.layout')
-@section('title', 'Encomendas')
+@section('title', 'Bagagens')
 @section('conteudo')
 
 
@@ -62,10 +62,9 @@
                     <div class="col s6">
                 <span class="card-title "><h4><b>Espaço de Criação de Bagagens e encomendas</b></h4></span> 
             </div>
-                <div class="col s6" id="botaoNovo"><a id="menu2" href="" class="waves-effect waves-light btn-large pulse ">
-                  Bagagem </a> </div>
+                <div class="col s6" id="botaoNovo"><a id="menu2" href="" class="waves-effect waves-light btn-large pulse">
+                  Bagagem </a></div>
 
-                
         </div>
 
           <div class="tap-target" data-target="menu2">
@@ -74,7 +73,7 @@
               <p>a bunch of text</p>
             </div>
           </div>
-       
+          @include('site.bagagen.createB')
 
             <!--parte right do card-->
             <div class="row">
@@ -117,7 +116,7 @@
     <!--estrutura de accao-->
 
     <div class="fixed-action-btn">
-        <a id="menu" class="btn-floating btn-large bg-gradient-green modal-trigger" href="#create">
+        <a id="menu" class="btn-floating btn-large bg-gradient-green modal-trigger" href="#createB">
           <i class="large material-icons">add</i>
         </a>   
       </div>
@@ -128,39 +127,11 @@
           <p>a bunch of text</p>
         </div>
       </div>
-      @include('site.encomenda.create')
+      
 
-       <!-- Modal Structure -->
-       <div id="modal1" class="modal">
-        <div class="modal-content">
-          <h4><i class="material-icons">card_giftcard</i> Nova encomenda</h4>
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
-                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                <label for="first_name">First Name</label>
-              </div>
-              <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
-              </div>
-    
-              <div class="input-field col s12">
-                <select>
-                  <option value="" disabled selected>Choose your option</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                </select>
-                <label>Materialize Select</label>
-              </div>          
-    
-            </div> 
-           
-            <a href="#!" class="modal-close waves-effect waves-green btn blue right">Cadastrar</a><br>
-        </div>
+      
         
-      </form>
+     
       </div>
       @include('site.sms.create')
         <!--a estrutura do crud-->
@@ -169,11 +140,26 @@
 
           <div class=" s2" id="botaoR"><a href="" class="waves-effect waves-light teal btn-small left mt-5 ">relatorio</a></div>
           <div class=" s2 ml-2 " id="botaoR"><a href="#createSMS" class="waves-effect waves-light modal-trigger btn-small left mt-5 blue"><i class="material-icons small">message</i></a></div>
+        
+               <!-- <ul class="pagination center">
+                  <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                  <li class="active"><a href="#!">1</a></li>
+                  <li class="waves-effect"><a href="#!">2</a></li>
+                  <li class="waves-effect"><a href="#!">3</a></li>
+                  <li class="waves-effect"><a href="#!">4</a></li>
+                  <li class="waves-effect"><a href="#!">5</a></li>
+                  <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                </ul>  -->             
+        </div>
 
-                <div class="row titulo ">              
-                  <h1 class="left"> Encomendas</h1>
-                  <span class="right chip"> 
-                    {{$encomendas->count()}} Encomendas</span>  
+        <div class="row crud ">
+
+          <div class=" s2" id="botaoR"><a href="" class="waves-effect waves-light teal btn-small left mt-5 ">relatorio</a></div>
+
+                <div class="row titulo">              
+                  <h1 class="left">Bagagens</h1>
+                  <span class="right chip">
+                    {{$bagagens->count()}} Bagagens</span>  
                 </div>
     
                <nav class="bg-gradient-green">
@@ -195,43 +181,34 @@
                       <tr>
                         <th></th>
                         <th>ID</th>  
-                        <th>Peso</th>
+                        <th>bilhete</th>
+                        <th>categoria</th>
+                          <th>peso</th>
                           
-                          <th>Cliente</th>
-                          <th>Categoria</th>
-                          <th>Taxa</th>
-                          <th>Viagem</th>
-                          <th></th>
                       </tr>
                     </thead>
             
                     <tbody>
-                      @foreach ($encomendas as $encomenda)
+                      @foreach ($bagagens as $bagagem)
                       <tr>
                         <td><img src="img/package.png" class="circle "></td>
-                        <td>{{$encomenda->id}}</td>
-                        <td>{{$encomenda->peso}} Kg</td>                    
-                        <td>{{$encomenda->cliente->nome}}</td>
-                        <td>{{$encomenda->categoria->tipo}}</td>
-                        <td>{{$encomenda->taxa}} Mt</td>
-                        <td>{{$encomenda->viagem->destino_id}}</td>
+                        <td>{{$bagagem->id}}</td>
+                        <td>{{$bagagem->bilhete_id}}</td> 
+                        <td>{{$bagagem->categoria->tipo}}</td> 
+                        <td>{{$bagagem->peso}} Kg</td>
+                        
                         <td>
-                          <a  href="#show-{{$encomenda->id}}" class="btn-floating waves-effect waves-light blue modal-trigger "><i class="material-icons">visibility</i></a>
-                          @can('access')
-                          <a href="#update-{{$encomenda->id}}" class="btn-floating  waves-effect waves-light orange modal-trigger"><i class="material-icons">mode_edit</i></a>
-                          <a href="#delete-{{$encomenda->id}}" class="btn-floating waves-effect waves-light red modal-trigger "><i class="material-icons">delete</i></a>
-                          @endcan
-                        </td>
+                          <a href="#show-{{$bagagem->id}}" class="btn-floating waves-effect waves-light blue modal-trigger "><i class="material-icons">visibility</i></a>
+                          <a href="" class="btn-floating  waves-effect waves-light orange modal-trigger"><i class="material-icons">mode_edit</i></a>
+                          <a href="" class="btn-floating waves-effect waves-light red modal-trigger"><i class="material-icons">delete</i></a></td>
                       </tr>
-                      @include('site.encomenda.delete')
-                      @include('site.encomenda.show')
-                    
-                     
+                      
                       @endforeach
                       </tbody>
                   </table>
                 </div> 
         </div>
+    
                <!-- <ul class="pagination center">
                   <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
                   <li class="active"><a href="#!">1</a></li>
@@ -242,6 +219,8 @@
                   <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
                 </ul>  -->             
         </div>
+
+
 
 </div>
 

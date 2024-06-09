@@ -107,10 +107,16 @@
         #estender1{
           height: 60px;  
         }
+        #estender11{
+          height: 60px;  
+        }
         #estender2{
           height: 60px;  
         }
         #estender3{
+          height: 60px;  
+        }
+        #estender4{
           height: 60px;  
         }
         #dimension{
@@ -120,7 +126,7 @@
         }
     </style>
 </head>
-<body >
+<body  id="bode">
     <!--Data target do dropdown-->
     <!--not working-->
     <ul id='dropdown1' class='dropdown-content'>
@@ -156,11 +162,17 @@
         <ul id="slide-out" class="sidenav sidenav-fixed teal lightgreen-2">
             
             <li><a href="#" class="brand-logo center links " id="estender"><h4>CFM</h4></a></li>
-            <li ><a href="{{route('admin.dashboard')}}" id="estender0"><i class="material-symbols-outlined small">dashboard</i>Dashboard</a></li>
-            <li ><a href="{{route('site.encomendas')}}" id="estender1"><i class="material-symbols-outlined small" >box</i>Encomendas</a></li>
-            <li><a href="{{route('site.clientes')}}" id="estender2"><i class="material-symbols-outlined small">people</i>Clientes</a></li>
-            <li><a href="{{route('site.bilhetes')}}" id="estender2"><i class="material-symbols-outlined small">confirmation_number</i>Bilheteria</a></li>
-            <li ><a href="{{route('site.viagem')}}" id="estender3"><i class="material-symbols-outlined small">train</i>Viagem</a></li> 
+            
+
+            <li ><a href="{{route('admin.dashboard')}}" id="estender0"><i class="material-symbols-outlined small">dashboard</i><p><b>Dashboard</b></p></a></li>
+            <li ><a href="{{route('site.encomendas')}}" id="estender1"><i class="material-symbols-outlined small" >box</i><p><b>Encomendas</b></p></a></li>
+            <li ><a href="{{route('site.bagagens')}}" id="estender11"><i class="material-symbols-outlined small" >box</i><p><b>Bagagens</b></p></a></li>
+            <li><a href="{{route('site.clientes')}}" id="estender2"><i class="material-symbols-outlined small">people</i><p><b>Clientes</b></p></a></li>
+            <li><a href="{{route('site.bilhetes')}}" id="estender4"><i class="material-symbols-outlined small">confirmation_number</i><p><b>Bilheteria</b></p></a></li>
+            <li ><a href="{{route('site.viagem')}}" id="estender3"><i class="material-symbols-outlined small">train</i><p><b>Viagem</b></p></a></li> 
+            @can('access')
+            <li ><a href="{{route('site.users')}}" id="estender3"><i class="material-symbols-outlined small">person</i><p><b>Usuarios</b></p></a></li>
+            @endcan
         </ul>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -183,6 +195,7 @@
         let botao = document.getElementById('hellobut');
         let centro = document.getElementById('centrallogo');
         let botao2 = document.getElementById('hellobut2');
+        let disapear = document.getElementById('estender');
 
         function esconder(){
             //minhaSide.style.transition ='all 0.5s';
@@ -198,12 +211,13 @@
             centro.style.transform = 'translateX(-100%)';
             centro.style.transition = 'transform 0.4s ease';
             botao2.style.paddingLeft ='0%'; 
+            disapear.style.display= 'none'; 
 
 
         }
         function mostrar(){
             if(minhaSide.style.transform == 'translateX(-80%)'){
-
+                
                 //minhaSide.style.display = 'block';
                 lihome2.style.display ='none';
                 lihome.style.display ='block';
@@ -215,13 +229,16 @@
                 centro.style.paddingLeft='20%';
                 centro.style.transform ='translateX(100%)';
                 centro.style.transition ='transform 0.4s ease';
+                
             }
         }
-       
+          
        </script>
     @yield('conteudo')
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
     <script src="{{asset('js/chart.js')}}" ></script>
     <script src="{{asset('js/main.js')}}"></script>
     @stack('graficos')

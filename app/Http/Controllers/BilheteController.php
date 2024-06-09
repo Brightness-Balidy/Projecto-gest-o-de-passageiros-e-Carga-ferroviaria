@@ -74,6 +74,7 @@ class BilheteController extends Controller
         $nome= Bilhete::with('cliente','viagem')->get();
         $bilhete = Bilhete::find($id);
         return redirect()->route(compact('bilhete','nome'), 'site.bilhetes');
+
     }
 
     /**

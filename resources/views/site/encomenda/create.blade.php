@@ -1,15 +1,17 @@
 
 <style>
-  #create{
-   height: 80%;
-  }
+#create{  
+        width: 50%;
+        height: 430px;
+
+        }
 </style>
-<div id="create" class="modal rounded">
+<div id="create" class="modal rounded ">
    
     <div class="modal-content bg-gradient-green">
         <h4><i class="material-symbols-outlined medium">package_2</i> Nova Encomenda</h4>
   
-        <form action="{{route('site.encomendas.store')}}" method="POST" class="col s12" >
+        <form action="{{route('site.encomendas.store')}}" method="POST" class="col s12">
           <div class="row mt-5">
             <div class="input-field col s6">
               @csrf
@@ -71,6 +73,7 @@
       </div>
       
     </div>
+
     <script>
     document.addEventListener('DomContentLoaded', function(){
       var elems = document.querySelectorAll('.datepicker');

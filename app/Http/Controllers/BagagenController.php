@@ -16,12 +16,12 @@ class BagagenController extends Controller
      */
     public function index()
     {
-      
         $categorias = Categoria::all();
         $bilhetes = Bilhete::with('clientes')->get();
-        $bagagens = Bagagen::all();
+        $bagagens = Bagagen::with('categoria')->get();
+
         return         
-        view(('site/encomendas'),compact('hello','categorias','bilhetes','bagagens'));
+        view(('site/bagagens'),compact('hello','categorias','bilhetes','bagagens'));
     }
 
     /**
@@ -44,20 +44,21 @@ class BagagenController extends Controller
     {
         $bagagem = $request->all();
         $bagagem = Bagagen::create($bagagem);
-        return redirect()->route('site.encomendas'); 
+        return redirect()->route('site.bagagens'); 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $dados= Bagagen::with('bilhetes','categoria')->get();
+        $bagagen = Bagagen::find($id);
+        return redirect()->route(compact('bagagen','dados'),'site.bagagens');
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -66,7 +67,7 @@ class BagagenController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -80,13 +81,13 @@ class BagagenController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
         //

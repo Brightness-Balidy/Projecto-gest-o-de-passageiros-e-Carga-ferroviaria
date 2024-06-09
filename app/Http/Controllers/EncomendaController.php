@@ -22,13 +22,12 @@ class EncomendaController extends Controller
         //return "Index";
         //$encomenda= Encomenda::all();
         //return dd($encomenda);
-        $clientes=Cliente::all();
+        $clientes= Cliente::all();
         $viagens= Viagen::with('destino')->get();
         $categorias=Categoria::all();
         $bilhetes= Bilhete::all();
-        $bagagens= Bagagen::all();
-        $encomendas= Encomenda::with(['cliente', 'categoria','viagem'])->get();
-        return view(('site/encomendas'),compact('clientes','viagens','categorias','bilhetes','encomendas','bagagens'));
+        $encomendas= Encomenda::with(['cliente','categoria','viagem'])->get();
+        return view(('site/encomendas'), compact('clientes','viagens','categorias','bilhetes','encomendas'));
         //return view('site/home');
     }
 
@@ -84,7 +83,6 @@ class EncomendaController extends Controller
         $dados= Encomenda::with('cliente','categoria')->get();
         $encomenda = Encomenda::find($id);
         return redirect()->route(compact('encomenda','dados'),'site.encomendas');
-
     }
 
     /**
@@ -109,7 +107,6 @@ class EncomendaController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -118,7 +115,7 @@ class EncomendaController extends Controller
      */
     public function destroy($id)
     {   
-        $nome = Encomenda::with('cliente','categoria')->get();
+        $nome= Encomenda::with('cliente','categoria')->get();
         $encomenda= Encomenda::find($id);
         $encomenda-> delete();
         return  redirect()->route(compact('nome'),'site.encomendas');

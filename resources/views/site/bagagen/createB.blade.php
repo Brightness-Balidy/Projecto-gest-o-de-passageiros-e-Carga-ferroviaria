@@ -1,6 +1,7 @@
 <style>
     #createB{
-        height: 55%;
+        height: 400px;
+        width: 50%;
     }
 </style>
 <div id="createB" class="modal rounded">
@@ -8,7 +9,7 @@
     <div class="modal-content bg-gradient-green">
         <h4><i class="material-symbols-outlined medium">package_2</i> Nova bagagem</h4>
   
-        <form action="{{route('site.bagagen.store')}}" method="POST" class="col s12" >
+        <form action="{{route('site.bagagen.store')}}" method="POST" class="col s12">
           <div class="row mt-5">
             <div class="input-field col s6">
               @csrf
