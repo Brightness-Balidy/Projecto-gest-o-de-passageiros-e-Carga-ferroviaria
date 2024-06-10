@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
+        p{
+            
+        }
          #nav1 {
             width: 80%;
             height: 55px;
@@ -107,9 +110,6 @@
         #estender1{
           height: 60px;  
         }
-        #estender11{
-          height: 60px;  
-        }
         #estender2{
           height: 60px;  
         }
@@ -117,6 +117,12 @@
           height: 60px;  
         }
         #estender4{
+          height: 60px;  
+        }
+        #estender5{
+          height: 60px;  
+        }
+        #estender6{
           height: 60px;  
         }
         #dimension{
@@ -166,12 +172,12 @@
 
             <li ><a href="{{route('admin.dashboard')}}" id="estender0"><i class="material-symbols-outlined small">dashboard</i><p><b>Dashboard</b></p></a></li>
             <li ><a href="{{route('site.encomendas')}}" id="estender1"><i class="material-symbols-outlined small" >box</i><p><b>Encomendas</b></p></a></li>
-            <li ><a href="{{route('site.bagagens')}}" id="estender11"><i class="material-symbols-outlined small" >box</i><p><b>Bagagens</b></p></a></li>
-            <li><a href="{{route('site.clientes')}}" id="estender2"><i class="material-symbols-outlined small">people</i><p><b>Clientes</b></p></a></li>
+            <li ><a href="{{route('site.bagagens')}}" id="estender2"><i class="material-symbols-outlined small" >box</i><p><b>Bagagens</b></p></a></li>
+            <li><a href="{{route('site.clientes')}}" id="estender3"><i class="material-symbols-outlined small">people</i><p><b>Clientes</b></p></a></li>
             <li><a href="{{route('site.bilhetes')}}" id="estender4"><i class="material-symbols-outlined small">confirmation_number</i><p><b>Bilheteria</b></p></a></li>
-            <li ><a href="{{route('site.viagem')}}" id="estender3"><i class="material-symbols-outlined small">train</i><p><b>Viagem</b></p></a></li> 
+            <li ><a href="{{route('site.viagem')}}" id="estender5"><i class="material-symbols-outlined small">train</i><p><b>Viagem</b></p></a></li> 
             @can('access')
-            <li ><a href="{{route('site.users')}}" id="estender3"><i class="material-symbols-outlined small">person</i><p><b>Usuarios</b></p></a></li>
+            <li ><a href="{{route('site.users')}}" id="estender6"><i class="material-symbols-outlined small">person</i><p><b>Usuarios</b></p></a></li>
             @endcan
         </ul>
 

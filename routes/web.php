@@ -82,6 +82,7 @@ Route::get('/viagem',[ViagemController::class,'index'])->name('site.viagem')-> m
 Route::post('site/viagem/store',[ViagemController::class,'store'])->name('site.viagem.store');
 
 //bagagens
+Route::get('/bagagens',[BagagenController::class, 'index'])->name('site.bagagens');
 Route::get('/encomendas',[EncomendaController::class,'index'])->name('site.encomendas')-> middleware('auth', 'checkemail');
 Route::post('site/encomendas',[BagagenController::class,'store'])->name('site.bagagen.store');
 

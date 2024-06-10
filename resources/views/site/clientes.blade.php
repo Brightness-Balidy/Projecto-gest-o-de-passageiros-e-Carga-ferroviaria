@@ -139,18 +139,18 @@
 
         <div class="row" id="ajustarRow">
                 <div class="card z-depth-4 registros " id="tabelaCrd" >
-                <table class="striped ">
+                <table class="table-hover">
 
                     <thead>
 
                       <tr>
-                        <th></th>
-                        <th>ID</th>  
-                        <th>Nome</th>
+                        <th scope="col"></th>
+                        <th scope="col">ID</th>  
+                        <th scope="col">Nome</th>
                           
-                          <th>Sobrenome</th>
-                          <th>Contacto</th>
-                          <th>Código</th>
+                          <th scope="col">Sobrenome</th>
+                          <th scope="col">Contacto</th>
+                          <th scope="col">Código</th>
                           
                       </tr>
                     </thead>
@@ -159,7 +159,7 @@
                       @foreach($clientes as $cliente)
                       <tr>
                         <td><a class="btn-floating waves-effect waves-light blue"><i class="material-icons ">account_circle</i></a></td>
-                        <td>{{$cliente->id}}</td>
+                        <th scope='Row'>{{$cliente->id}}</th>
                         <td>{{$cliente->nome}}</td>                    
                         <td>{{$cliente->sobrenome}}</td>
                         <td>{{$cliente->contacto}}</td>

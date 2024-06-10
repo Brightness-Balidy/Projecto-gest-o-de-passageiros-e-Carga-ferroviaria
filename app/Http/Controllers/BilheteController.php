@@ -59,7 +59,7 @@ class BilheteController extends Controller
         //armazenar os bilhetes
         $bilhete= $request->all();
         $bilhete= Bilhete::create($bilhete);
-        return redirect()->route('site.encomendas');
+        return redirect()->route('site.bilhetes');
     }
 
 

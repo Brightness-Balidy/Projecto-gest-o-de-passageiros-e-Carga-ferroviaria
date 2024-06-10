@@ -189,27 +189,27 @@
               </nav>     
         <div class="row" id="ajustarRow">
                 <div class="card z-depth-4 registros " id="tabelaCrd" >
-                <table class="striped ">
+                <table class=" table-hover ">
                     <thead>
                       
                       <tr>
-                        <th></th>
-                        <th>ID</th>  
-                        <th>Peso</th>
+                        <th scope="col"></th>
+                        <th scope="col">ID</th>  
+                        <th scope="col">Peso</th>
                           
-                          <th>Cliente</th>
-                          <th>Categoria</th>
-                          <th>Taxa</th>
-                          <th>Viagem</th>
-                          <th></th>
+                          <th scope="col">Cliente</th>
+                          <th scope="col">Categoria</th>
+                          <th scope="col">Taxa</th>
+                          <th scope="col">Viagem</th>
+                          <th scope="col"></th>
                       </tr>
                     </thead>
             
                     <tbody>
                       @foreach ($encomendas as $encomenda)
                       <tr>
-                        <td><img src="img/package.png" class="circle "></td>
-                        <td>{{$encomenda->id}}</td>
+                        <td ><img src="img/package.png" class="circle "></td>
+                        <th scope="row">{{$encomenda->id}}</th>
                         <td>{{$encomenda->peso}} Kg</td>                    
                         <td>{{$encomenda->cliente->nome}}</td>
                         <td>{{$encomenda->categoria->tipo}}</td>

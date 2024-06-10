@@ -132,14 +132,14 @@
                 
             <div class="row" id="ajustarRow">
                     <div class="card z-depth-4 registros " id="tabelaCrd" >
-                    <table class="table table-hover">
+                    <table class="table-hover">
     
                         <thead>
                           <tr>
                             <th scope="col"></th>
                             <th scope="col">ID</th>  
                             <th scope="col">Nome</th>
-                              
+                              <th scope="col"></th>
                               <th scope="col">Sobrenome</th>
                               <th scope="col">Destino</th>
                               <th scope="col">Preço</th>
@@ -153,19 +153,22 @@
                             <td><i class="material-symbols-outlined medium " id="iconPackage2" >
                               receipt
                           </i></td>
-                            <th scope="row">{{$bilhete->id}}</th>
-                            <td>{{$bilhete->cliente->nome}}<td>                    
+                            <td scope="row">{{$bilhete->id}}</td>
+                            <td>{{$bilhete->cliente->nome}}<td> 
+                            
                             <td>{{$bilhete->cliente->sobrenome}}</td>
-                           
+
                             <td>{{$bilhete->viagem->local_partida}}</td>
                             <td>{{$bilhete->viagem->preco}} Mt</td>
                            
                             <td>
                               <a href="#show-{{$bilhete->id}}" class="btn-floating waves-effect waves-light blue modal-trigger"><i class="material-icons">visibility</i></a>
-
+                              
                               <a class="btn-floating waves-effect waves-light orange"><i class="material-icons">mode_edit</i></a>
-    
-                              <a href="#delete-{{$bilhete->id}}" class="btn-floating waves-effect waves-light red modal-trigger"><i class="material-icons">delete</i></a></td>
+                              @can('access')
+                              <a href="#delete-{{$bilhete->id}}" class="btn-floating waves-effect waves-light red modal-trigger"><i class="material-icons">delete</i></a>
+                              @endcan
+                            </td>
                           </tr>
                           @include('site.bilheteria.delete')
                           @include('site.bilheteria.show')
@@ -214,9 +217,4 @@
         $('.tap-target').tapTarget();
       });
     </script>
-    
-    @endsection
-    
-    
-</body>
-</html>
+@endsection
